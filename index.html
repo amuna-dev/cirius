@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>NOIR Detail — премиум-детейлинг и керамика для авто в Ташкенте</title>
+  <meta name="description" content="Студия детейлинга NOIR Detail: керамическое покрытие, полировка, химчистка салона и защитная плёнка PPF. Гарантия до 5 лет в договоре. Бесплатная диагностика кузова.">
+  <meta name="theme-color" content="#0A0A0C">
+
+  <!-- Open Graph. После публикации замените og:image и og:url на абсолютные адреса сайта -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="NOIR Detail">
+  <meta property="og:title" content="NOIR Detail — премиум-детейлинг и керамика для авто">
+  <meta property="og:description" content="Керамика, полировка и защита кузова на годы. Гарантия до 5 лет в договоре. Бесплатная диагностика кузова и скидка 15% на первый визит.">
+  <meta property="og:image" content="images/hero.jpg">
+  <meta property="og:url" content="index.html">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A0A0C'/%3E%3Cpath d='M9 23V9h2.6l8 10V9H23v14h-2.6l-8-10v10z' fill='%23fff'/%3E%3Ccircle cx='26' cy='26' r='3' fill='%2300E5FF'/%3E%3C/svg%3E">
+
+  <!-- Space Grotesk без кириллицы: латиница и цифры берутся из него, кириллица — из Manrope -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    /* Язык: ссылка с ?lang=, затем выбор посетителя, затем язык браузера.
+       Пока main.js подставляет английские тексты, страница скрыта, чтобы не мелькал русский */
+    (function () {
+      var root = document.documentElement;
+      var param = new URLSearchParams(location.search).get('lang');
+      var saved = null;
+      try { saved = localStorage.getItem('noir_lang'); } catch (e) {}
+      var lang = param === 'ru' || param === 'en' ? param : saved || (navigator.language || 'en');
+      root.lang = /^(ru|uk|be|kk|uz)/i.test(lang) ? 'ru' : 'en';
+      root.classList.add('js');
+      if (root.lang === 'en') {
+        root.classList.add('i18n-pending');
+        setTimeout(function () { root.classList.remove('i18n-pending'); }, 1500);
+      }
+    })();
+  </script>
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main" data-t="ui.skip">Перейти к содержанию</a>
+
+  <!-- ===== Шапка ===== -->
+  <header class="header" data-header>
+    <div class="container header__inner">
+      <a class="logo" href="index.html" aria-label="NOIR Detail — на главную" data-t-attr="aria-label:ui.logoLabel">NOIR<span class="logo__dot" aria-hidden="true"></span><span class="logo__sub">Detail</span></a>
+
+      <nav class="nav" id="site-nav" aria-label="Основная навигация" data-t-attr="aria-label:ui.navMain" data-nav>
+        <a class="nav__link" href="index.html" aria-current="page" data-t="ui.navHome">Главная</a>
+        <a class="nav__link" href="services.html" data-t="ui.navServices">Услуги и расчёт</a>
+        <a class="btn btn--primary nav__cta" href="#lead" data-t="ui.book">Записаться</a>
+      </nav>
+
+      <div class="lang" role="group" aria-label="Выбор языка" data-t-attr="aria-label:ui.langLabel">
+        <button class="lang__btn" type="button" lang="ru" aria-label="Русский" data-lang="ru">RU</button>
+        <button class="lang__btn" type="button" lang="en" aria-label="English" data-lang="en">EN</button>
+      </div>
+
+      <button class="burger" type="button" aria-label="Открыть меню" data-t-attr="aria-label:ui.menuOpen" aria-expanded="false" aria-controls="site-nav" data-burger>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===== 1. Hero ===== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__bg" data-parallax>
+        <div class="media" data-label="Главное фото" data-t-attr="data-label:ui.heroPhoto" data-file="images/hero.jpg">
+          <img src="images/hero.jpg" alt="Чёрный автомобиль с идеально отполированным кузовом в студии NOIR Detail" data-t-attr="alt:ui.heroAlt" width="1920" height="1080" fetchpriority="high">
+        </div>
+      </div>
+      <div class="hero__shade" aria-hidden="true"></div>
+
+      <div class="container hero__content">
+        <p class="eyebrow" data-t="hero.eyebrow">Детейлинг-студия премиум-класса</p>
+        <h1 class="hero__title" id="hero-title" data-t="hero.title">Ваш автомобиль заслуживает <em>идеального блеска</em></h1>
+        <p class="hero__lead" data-t="hero.lead">Керамика и защита кузова на годы: глубокий блеск, стойкость к царапинам и реагентам, гарантия в договоре.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary btn--lg" href="#lead" data-t="hero.ctaPrimary">Бесплатная диагностика кузова</a>
+          <a class="btn btn--ghost btn--lg" href="services.html#calc" data-t="hero.ctaSecondary">Рассчитать стоимость</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3. Услуги ===== -->
+    <section class="section" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow" data-t="services.eyebrow">Услуги</p>
+          <h2 id="services-title" data-t="services.title">Всё для кузова и салона в одном боксе</h2>
+          <p class="section__lead" data-t="services.lead">Подбираем работы под состояние автомобиля. Точную цену называем после бесплатной диагностики.</p>
+        </header>
+        <div class="bento" data-render="services"></div>
+      </div>
+    </section>
+
+    <!-- ===== 4. До / После ===== -->
+    <section class="section section--tint" id="before-after" aria-labelledby="ba-title">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow" data-t="ba.eyebrow">До / После</p>
+          <h2 id="ba-title" data-t="ba.title">Разница видна сразу</h2>
+          <p class="section__lead" data-t="ba.lead">Потяните разделитель: слева кузов до работ, справа тот же автомобиль после полировки и керамики.</p>
+        </header>
+
+        <div class="ba" data-ba data-reveal>
+          <div class="ba__layer ba__layer--after">
+            <div class="media" data-label="После" data-t-attr="data-label:ui.after" data-file="images/after.jpg">
+              <img src="images/after.jpg" alt="Кузов после полировки: глубокий блеск без царапин" data-t-attr="alt:ui.afterAlt" width="1600" height="900" loading="lazy" decoding="async" draggable="false">
+            </div>
+          </div>
+          <div class="ba__layer ba__layer--before">
+            <div class="media" data-label="До" data-t-attr="data-label:ui.before" data-file="images/before.jpg">
+              <img src="images/before.jpg" alt="Кузов до полировки: тусклый лак с мелкими царапинами" data-t-attr="alt:ui.beforeAlt" width="1600" height="900" loading="lazy" decoding="async" draggable="false">
+            </div>
+          </div>
+          <span class="ba__tag ba__tag--before" aria-hidden="true" data-t="ui.before">До</span>
+          <span class="ba__tag ba__tag--after" aria-hidden="true" data-t="ui.after">После</span>
+          <div class="ba__handle" role="slider" tabindex="0" aria-label="Положение разделителя до и после" data-t-attr="aria-label:ui.sliderLabel" aria-orientation="horizontal" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" data-ba-handle>
+            <span class="ba__grip" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 7-5 5 5 5M15 7l5 5-5 5"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 5. Как мы работаем ===== -->
+    <section class="section" id="process" aria-labelledby="process-title">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow" data-t="process.eyebrow">Как мы работаем</p>
+          <h2 id="process-title" data-t="process.title">Четыре шага до идеального кузова</h2>
+        </header>
+        <ol class="timeline" data-render="steps" data-reveal></ol>
+      </div>
+    </section>
+
+    <!-- ===== 6. Почему NOIR Detail ===== -->
+    <section class="section section--tint" id="why" aria-labelledby="why-title">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow" data-t="why.eyebrow">Почему NOIR Detail</p>
+          <h2 id="why-title" data-t="why.title">Отвечаем за результат документально</h2>
+        </header>
+        <div class="features" data-render="advantages"></div>
+      </div>
+    </section>
+
+    <!-- ===== 7. Галерея ===== -->
+    <section class="section" id="gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow" data-t="gallery.eyebrow">Галерея</p>
+          <h2 id="gallery-title" data-t="gallery.title">Наши работы</h2>
+        </header>
+        <div class="gallery" data-render="gallery"></div>
+      </div>
+    </section>
+
+    <!-- ===== 9. FAQ ===== -->
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container container--narrow">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow" data-t="faq.eyebrow">Частые вопросы</p>
+          <h2 id="faq-title" data-t="faq.title">Отвечаем до того, как вы спросите</h2>
+        </header>
+        <div class="faq" data-render="faq" data-reveal></div>
+      </div>
+    </section>
+
+    <!-- ===== 10. Захват заявки ===== -->
+    <section class="section lead" id="lead" aria-labelledby="lead-title" data-booking-section>
+      <div class="container lead__grid">
+        <div class="lead__info" data-reveal>
+          <p class="eyebrow" data-t="lead.eyebrow">Акция для новых клиентов</p>
+          <h2 id="lead-title" data-t="lead.title">Бесплатная диагностика кузова + скидка 15%</h2>
+          <p class="section__lead" data-t="lead.lead">Замерим толщину лака, покажем дефекты под лампой и назовём точную цену. Это ни к чему не обязывает.</p>
+
+          <div class="urgency">
+            <p class="urgency__seats"><span class="urgency__pulse" aria-hidden="true"></span><span data-promo-seats></span></p>
+            <div class="urgency__timer" data-countdown>
+              <p class="urgency__label" data-t="lead.timerLabel">До конца акции:</p>
+              <div class="countdown" role="timer">
+                <div><b data-unit="d">00</b><span data-t="ui.days">дней</span></div>
+                <div><b data-unit="h">00</b><span data-t="ui.hours">часов</span></div>
+                <div><b data-unit="m">00</b><span data-t="ui.minutes">минут</span></div>
+                <div><b data-unit="s">00</b><span data-t="ui.seconds">секунд</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card gradient-border" data-reveal>
+          <form class="form" data-lead-form="home" novalidate>
+            <h3 class="form__title" data-t="lead.formTitle">Записаться на диагностику</h3>
+            <div class="field">
+              <label for="lead-name" data-t="ui.formName">Ваше имя</label>
+              <input id="lead-name" name="name" type="text" autocomplete="name" placeholder="Как к вам обращаться" data-t-attr="placeholder:ui.formNamePh" data-rule="name" required>
+            </div>
+            <div class="field">
+              <label for="lead-phone" data-t="ui.formPhone">Телефон</label>
+              <input id="lead-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" data-phone data-rule="phone" required>
+            </div>
+            <div class="field">
+              <label for="lead-car" data-t="ui.formCar">Марка автомобиля</label>
+              <input id="lead-car" name="car" type="text" autocomplete="off" placeholder="Например, BMW X5" data-t-attr="placeholder:ui.formCarPh" data-rule="car" required>
+            </div>
+            <div class="field">
+              <label for="lead-service" data-t="ui.formService">Услуга</label>
+              <select id="lead-service" name="service" data-service-select data-rule="service" required>
+                <option value="" data-t="ui.formServicePick">Выберите услугу</option>
+              </select>
+            </div>
+            <button class="btn btn--primary btn--lg btn--block" type="submit" data-t="lead.submit">Получить диагностику и скидку</button>
+            <p class="form__note" data-t="lead.note">Перезвоним в течение 15 минут в рабочее время. Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Футер ===== -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a class="logo" href="index.html" aria-label="NOIR Detail — на главную" data-t-attr="aria-label:ui.logoLabel">NOIR<span class="logo__dot" aria-hidden="true"></span><span class="logo__sub">Detail</span></a>
+        <p data-t="footer.tagline">Премиум-детейлинг и керамика для автомобилей, за которыми хочется ухаживать.</p>
+      </div>
+      <div>
+        <h2 class="footer__title" data-t="ui.footerContacts">Контакты</h2>
+        <address class="footer__list">
+          <span data-t="contacts.address">Ташкент, Яшнабадский район, ул. Шёлковая, 17</span>
+          <a data-href="telegram" href="#" target="_blank" rel="noopener" data-t="ui.footerTelegram">Написать в Telegram</a>
+        </address>
+      </div>
+      <div>
+        <h2 class="footer__title" data-t="ui.footerHours">Часы работы</h2>
+        <p class="footer__list" data-t="contacts.hours">Ежедневно, 9:00–21:00</p>
+      </div>
+      <nav aria-label="Навигация в футере" data-t-attr="aria-label:ui.navFooter">
+        <h2 class="footer__title" data-t="ui.footerSections">Разделы</h2>
+        <div class="footer__list">
+          <a href="index.html" data-t="ui.navHome">Главная</a>
+          <a href="services.html" data-t="ui.navServices">Услуги и расчёт</a>
+          <a href="#lead" data-t="ui.book">Записаться</a>
+        </div>
+      </nav>
+      <div>
+        <h2 class="footer__title" data-t="ui.footerSocials">Соцсети</h2>
+        <div class="socials" data-render="socials"></div>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© <span data-year>2026</span> NOIR Detail. <span data-t="ui.rights">Все права защищены.</span></p>
+    </div>
+  </footer>
+
+  <noscript>
+    <p class="noscript">Для калькулятора и записи онлайн включите JavaScript. Please enable JavaScript to use the calculator and booking form.</p>
+  </noscript>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

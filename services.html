@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Услуги и расчёт стоимости — NOIR Detail</title>
+  <meta name="description" content="Пакеты детейлинга, онлайн-калькулятор стоимости и запись в студию NOIR Detail. Полировка, керамика, химчистка и плёнка PPF с гарантией в договоре.">
+  <meta name="theme-color" content="#0A0A0C">
+
+  <!-- Open Graph. После публикации замените og:image и og:url на абсолютные адреса сайта -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="NOIR Detail">
+  <meta property="og:title" content="Услуги и расчёт стоимости — NOIR Detail">
+  <meta property="og:description" content="Сравните пакеты, рассчитайте стоимость онлайн и запишитесь в удобный день.">
+  <meta property="og:image" content="images/hero.jpg">
+  <meta property="og:url" content="services.html">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A0A0C'/%3E%3Cpath d='M9 23V9h2.6l8 10V9H23v14h-2.6l-8-10v10z' fill='%23fff'/%3E%3Ccircle cx='26' cy='26' r='3' fill='%2300E5FF'/%3E%3C/svg%3E">
+
+  <!-- Space Grotesk без кириллицы: латиница и цифры берутся из него, кириллица — из Manrope -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    /* Язык: ссылка с ?lang=, затем выбор посетителя, затем язык браузера.
+       Пока main.js подставляет английские тексты, страница скрыта, чтобы не мелькал русский */
+    (function () {
+      var root = document.documentElement;
+      var param = new URLSearchParams(location.search).get('lang');
+      var saved = null;
+      try { saved = localStorage.getItem('noir_lang'); } catch (e) {}
+      var lang = param === 'ru' || param === 'en' ? param : saved || (navigator.language || 'en');
+      root.lang = /^(ru|uk|be|kk|uz)/i.test(lang) ? 'ru' : 'en';
+      root.classList.add('js');
+      if (root.lang === 'en') {
+        root.classList.add('i18n-pending');
+        setTimeout(function () { root.classList.remove('i18n-pending'); }, 1500);
+      }
+    })();
+  </script>
+</head>
+<body data-page="services">
+  <a class="skip-link" href="#main" data-t="ui.skip">Перейти к содержанию</a>
+
+  <!-- ===== Шапка ===== -->
+  <header class="header" data-header>
+    <div class="container header__inner">
+      <a class="logo" href="index.html" aria-label="NOIR Detail — на главную" data-t-attr="aria-label:ui.logoLabel">NOIR<span class="logo__dot" aria-hidden="true"></span><span class="logo__sub">Detail</span></a>
+
+      <nav class="nav" id="site-nav" aria-label="Основная навигация" data-t-attr="aria-label:ui.navMain" data-nav>
+        <a class="nav__link" href="index.html" data-t="ui.navHome">Главная</a>
+        <a class="nav__link" href="services.html" aria-current="page" data-t="ui.navServices">Услуги и расчёт</a>
+        <a class="btn btn--primary nav__cta" href="#booking" data-t="ui.book">Записаться</a>
+      </nav>
+
+      <div class="lang" role="group" aria-label="Выбор языка" data-t-attr="aria-label:ui.langLabel">
+        <button class="lang__btn" type="button" lang="ru" aria-label="Русский" data-lang="ru">RU</button>
+        <button class="lang__btn" type="button" lang="en" aria-label="English" data-lang="en">EN</button>
+      </div>
+
+      <button class="burger" type="button" aria-label="Открыть меню" data-t-attr="aria-label:ui.menuOpen" aria-expanded="false" aria-controls="site-nav" data-burger>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===== 1. Компактный hero ===== -->
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <p class="eyebrow" data-t="sv.eyebrow">Пакеты, цены, запись</p>
+        <h1 id="page-title" data-t="sv.title">Услуги и расчёт стоимости</h1>
+        <p class="section__lead" data-t="sv.lead">Выберите готовый пакет или соберите свой набор работ в калькуляторе. Выбор сразу попадёт в форму записи.</p>
+        <nav class="chips" aria-label="Разделы страницы" data-t-attr="aria-label:ui.chipsNav">
+          <a class="chip" href="#packages" data-t="ui.chipPackages">Пакеты</a>
+          <a class="chip" href="#calc" data-t="ui.chipCalc">Калькулятор</a>
+          <a class="chip" href="#compare" data-t="ui.chipCompare">Сравнение</a>
+          <a class="chip" href="#booking" data-t="ui.chipBooking">Запись</a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ===== 2. Пакеты ===== -->
+    <section class="section section--flush-top" id="packages" aria-labelledby="packages-title">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow" data-t="packages.eyebrow">Пакеты</p>
+          <h2 id="packages-title" data-t="packages.title">Три готовых решения</h2>
+          <p class="section__lead" data-t="packages.lead">Цены указаны для седана. Для других классов рассчитайте стоимость в калькуляторе.</p>
+        </header>
+        <div class="packages" data-render="packages"></div>
+      </div>
+    </section>
+
+    <!-- ===== 3. Калькулятор ===== -->
+    <section class="section section--tint" id="calc" aria-labelledby="calc-title">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow" data-t="calc.eyebrow">Калькулятор</p>
+          <h2 id="calc-title" data-t="calc.title">Рассчитайте стоимость за минуту</h2>
+          <p class="section__lead" data-t="calc.lead">Цена ориентировочная: точную сумму назовём после бесплатной диагностики.</p>
+        </header>
+
+        <form class="calc" data-calc data-reveal>
+          <div class="calc__options">
+            <fieldset class="calc__group">
+              <legend data-t="ui.calcStep1">1. Класс автомобиля</legend>
+              <div class="tiles tiles--classes" data-calc-classes></div>
+            </fieldset>
+            <fieldset class="calc__group">
+              <legend data-t="ui.calcStep2">2. Услуги</legend>
+              <div class="tiles" data-calc-services></div>
+            </fieldset>
+          </div>
+
+          <aside class="calc__result gradient-border" aria-label="Итог расчёта" data-t-attr="aria-label:ui.calcResult">
+            <p class="calc__label" data-t="ui.calcTotal">Итого</p>
+            <p class="calc__total" data-calc-total>$0</p>
+            <p class="calc__discount" data-calc-discount></p>
+            <ul class="calc__lines" data-calc-lines></ul>
+            <p class="sr-only" aria-live="polite" data-calc-live></p>
+            <button class="btn btn--primary btn--lg btn--block" type="button" data-calc-book data-t="ui.calcBook">Записаться на этот расчёт</button>
+            <p class="calc__hint" data-calc-hint data-t="ui.calcHint" hidden>Выберите хотя бы одну услугу</p>
+          </aside>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== 4. Таблица сравнения ===== -->
+    <section class="section" id="compare" aria-labelledby="compare-title">
+      <div class="container container--narrow">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow" data-t="compare.eyebrow">Сравнение</p>
+          <h2 id="compare-title" data-t="compare.title">Что входит в каждый пакет</h2>
+        </header>
+        <div data-render="compare" data-reveal></div>
+      </div>
+    </section>
+
+    <!-- ===== 5. Форма записи ===== -->
+    <section class="section lead" id="booking" aria-labelledby="booking-title" data-booking-section>
+      <div class="container container--narrow">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow" data-t="booking.eyebrow">Запись</p>
+          <h2 id="booking-title" data-t="booking.title">Запишитесь в удобный день</h2>
+          <p class="section__lead" data-t="booking.lead">Оставьте заявку, и мы перезвоним, чтобы подтвердить дату и время.</p>
+        </header>
+
+        <div class="form-card gradient-border" data-reveal>
+          <form class="form form--wide" data-lead-form="services" novalidate>
+            <div class="form-summary" data-form-summary tabindex="-1" hidden>
+              <span class="form-summary__icon" data-icon="check"></span>
+              <p><b data-summary-title></b><span data-summary-text></span></p>
+              <button class="form-summary__reset" type="button" aria-label="Убрать выбранный расчёт" data-t-attr="aria-label:ui.summaryReset" data-summary-reset><span data-icon="close"></span></button>
+            </div>
+            <input type="hidden" name="summary" data-summary-input>
+
+            <div class="field">
+              <label for="book-name" data-t="ui.formName">Ваше имя</label>
+              <input id="book-name" name="name" type="text" autocomplete="name" placeholder="Как к вам обращаться" data-t-attr="placeholder:ui.formNamePh" data-rule="name" required>
+            </div>
+            <div class="field">
+              <label for="book-phone" data-t="ui.formPhone">Телефон</label>
+              <input id="book-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" data-phone data-rule="phone" required>
+            </div>
+            <div class="field">
+              <label for="book-car" data-t="ui.formCar">Марка автомобиля</label>
+              <input id="book-car" name="car" type="text" autocomplete="off" placeholder="Например, Toyota Camry" data-t-attr="placeholder:ui.formCarPhAlt" data-rule="car" required>
+            </div>
+            <div class="field">
+              <label for="book-service" data-t="ui.formService">Услуга</label>
+              <select id="book-service" name="service" data-service-select data-rule="service" required>
+                <option value="" data-t="ui.formServicePick">Выберите услугу</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="book-date" data-t="ui.formDate">Удобная дата</label>
+              <input id="book-date" name="date" type="date" data-date-min>
+            </div>
+            <div class="field field--full">
+              <label for="book-comment" data-t="ui.formComment">Комментарий</label>
+              <textarea id="book-comment" name="comment" rows="3" placeholder="Что важно учесть" data-t-attr="placeholder:ui.formCommentPh"></textarea>
+            </div>
+            <div class="field--full">
+              <button class="btn btn--primary btn--lg btn--block" type="submit" data-t="booking.submit">Записаться</button>
+              <p class="form__note" data-t="lead.note">Перезвоним в течение 15 минут в рабочее время. Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 6. Гарантии и сертификаты ===== -->
+    <section class="section section--tint" id="guarantees" aria-labelledby="guarantees-title">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow" data-t="guarantees.eyebrow">Гарантии и сертификаты</p>
+          <h2 id="guarantees-title" data-t="guarantees.title">Обещания, закреплённые на бумаге</h2>
+        </header>
+        <div class="features" data-render="guarantees"></div>
+      </div>
+    </section>
+
+    <!-- ===== 7. Финальный призыв ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="final-cta gradient-border" data-reveal>
+          <h2 data-t="finalCta.title">Не уверены, что выбрать?</h2>
+          <p class="section__lead" data-t="finalCta.lead">Приезжайте на бесплатную диагностику: осмотрим автомобиль и подскажем, какие работы действительно нужны.</p>
+          <div class="final-cta__actions">
+            <a class="btn btn--primary btn--lg" href="#booking" data-t="finalCta.button">Записаться на диагностику</a>
+            <a class="btn btn--ghost btn--lg" href="#calc" data-t="hero.ctaSecondary">Рассчитать стоимость</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Футер ===== -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a class="logo" href="index.html" aria-label="NOIR Detail — на главную" data-t-attr="aria-label:ui.logoLabel">NOIR<span class="logo__dot" aria-hidden="true"></span><span class="logo__sub">Detail</span></a>
+        <p data-t="footer.tagline">Премиум-детейлинг и керамика для автомобилей, за которыми хочется ухаживать.</p>
+      </div>
+      <div>
+        <h2 class="footer__title" data-t="ui.footerContacts">Контакты</h2>
+        <address class="footer__list">
+          <span data-t="contacts.address">Ташкент, Яшнабадский район, ул. Шёлковая, 17</span>
+          <a data-href="telegram" href="#" target="_blank" rel="noopener" data-t="ui.footerTelegram">Написать в Telegram</a>
+        </address>
+      </div>
+      <div>
+        <h2 class="footer__title" data-t="ui.footerHours">Часы работы</h2>
+        <p class="footer__list" data-t="contacts.hours">Ежедневно, 9:00–21:00</p>
+      </div>
+      <nav aria-label="Навигация в футере" data-t-attr="aria-label:ui.navFooter">
+        <h2 class="footer__title" data-t="ui.footerSections">Разделы</h2>
+        <div class="footer__list">
+          <a href="index.html" data-t="ui.navHome">Главная</a>
+          <a href="services.html" data-t="ui.navServices">Услуги и расчёт</a>
+          <a href="#booking" data-t="ui.book">Записаться</a>
+        </div>
+      </nav>
+      <div>
+        <h2 class="footer__title" data-t="ui.footerSocials">Соцсети</h2>
+        <div class="socials" data-render="socials"></div>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© <span data-year>2026</span> NOIR Detail. <span data-t="ui.rights">Все права защищены.</span></p>
+    </div>
+  </footer>
+
+  <noscript>
+    <p class="noscript">Для калькулятора и записи онлайн включите JavaScript. Please enable JavaScript to use the calculator and booking form.</p>
+  </noscript>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
