@@ -1530,3 +1530,6 @@ dialog { color: var(--text); }
   .js [data-reveal] { opacity: 1; transform: none; }
   .hero__bg { will-change: auto; }
 }
+
+/* Значок хостинга Netlify закрывал кнопки в нижней панели */
+#nl-badge-frame { display: none !important; }
