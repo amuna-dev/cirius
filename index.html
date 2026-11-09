@@ -3,269 +3,431 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>NOIR Detail — премиум-детейлинг и керамика для авто в Ташкенте</title>
-  <meta name="description" content="Студия детейлинга NOIR Detail: керамическое покрытие, полировка, химчистка салона и защитная плёнка PPF. Гарантия до 5 лет в договоре. Бесплатная диагностика кузова.">
-  <meta name="theme-color" content="#0A0A0C">
+  <title>Визовый консалтинг в Ташкенте: шенгенская виза | Сириус</title>
+  <meta name="description" content="Помощь с шенгенской визой в Ташкенте: страна подачи и тип визы, проверка документов, анкета, запись на подачу, страховка, разбор отказа.">
+  <meta name="theme-color" content="#F7F4EE">
+  <link rel="canonical" href="https://[ДОМЕН]/">
 
-  <!-- Open Graph. После публикации замените og:image и og:url на абсолютные адреса сайта -->
+  <!-- Open Graph. [ДОМЕН] заменить на адрес сайта после публикации -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
-  <meta property="og:site_name" content="NOIR Detail">
-  <meta property="og:title" content="NOIR Detail — премиум-детейлинг и керамика для авто">
-  <meta property="og:description" content="Керамика, полировка и защита кузова на годы. Гарантия до 5 лет в договоре. Бесплатная диагностика кузова и скидка 15% на первый визит.">
-  <meta property="og:image" content="https://noirdetail1.netlify.app/images/hero.jpg">
-  <meta property="og:url" content="https://noirdetail1.netlify.app/">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Сириус&nbsp;— визовый консалтинг">
+  <meta property="og:title" content="Сириус&nbsp;— помощь с шенгенской визой в Ташкенте">
+  <meta property="og:description" content="Определим страну подачи и тип визы, проверим документы, заполним анкету и поможем с записью на подачу. Связь в Telegram и по телефону.">
+  <meta property="og:image" content="https://[ДОМЕН]/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://[ДОМЕН]/">
+  <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A0A0C'/%3E%3Cpath d='M9 23V9h2.6l8 10V9H23v14h-2.6l-8-10v10z' fill='%23fff'/%3E%3Ccircle cx='26' cy='26' r='3' fill='%2300E5FF'/%3E%3C/svg%3E">
+  <link rel="icon" href="img/logo/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="img/logo/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="img/logo/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
 
-  <!-- Space Grotesk без кириллицы: латиница и цифры берутся из него, кириллица — из Manrope -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap">
-
+  <link rel="preload" href="fonts/montserrat-cyrillic-300.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/montserrat-cyrillic-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
-  <script>
-    /* Язык: ссылка с ?lang=, затем выбор посетителя, затем язык браузера.
-       Пока main.js подставляет английские тексты, страница скрыта, чтобы не мелькал русский */
-    (function () {
-      var root = document.documentElement;
-      var param = new URLSearchParams(location.search).get('lang');
-      var saved = null;
-      try { saved = localStorage.getItem('noir_lang'); } catch (e) {}
-      var lang = param === 'ru' || param === 'en' ? param : saved || (navigator.language || 'en');
-      root.lang = /^(ru|uk|be|kk|uz)/i.test(lang) ? 'ru' : 'en';
-      root.classList.add('js');
-      if (root.lang === 'en') {
-        root.classList.add('i18n-pending');
-        setTimeout(function () { root.classList.remove('i18n-pending'); }, 1500);
-      }
-    })();
+  <script src="js/init.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Сириус",
+    "alternateName": "Cirius Consulting",
+    "description": "Визовый консалтинг: помощь с шенгенской визой — консультация, подготовка и проверка документов, анкета, запись на подачу, бронирования и страховка, помощь после отказа.",
+    "url": "https://[ДОМЕН]/",
+    "logo": "https://[ДОМЕН]/img/logo/icon-512.png",
+    "areaServed": "Узбекистан",
+    "telephone": "+998915256856",
+    "sameAs": ["https://t.me/Djimbo9"]
+  }
   </script>
 </head>
 <body data-page="home">
   <a class="skip-link" href="#main" data-t="ui.skip">Перейти к содержанию</a>
 
-  <!-- ===== Шапка ===== -->
+  <!-- ===== Шапка (одинаковая на обеих страницах) ===== -->
   <header class="header" data-header>
     <div class="container header__inner">
-      <a class="logo" href="index.html" aria-label="NOIR Detail — на главную" data-t-attr="aria-label:ui.logoLabel">NOIR<span class="logo__dot" aria-hidden="true"></span><span class="logo__sub">Detail</span></a>
-
-      <nav class="nav" id="site-nav" aria-label="Основная навигация" data-t-attr="aria-label:ui.navMain" data-nav>
-        <a class="nav__link" href="index.html" aria-current="page" data-t="ui.navHome">Главная</a>
-        <a class="nav__link" href="services.html" data-t="ui.navServices">Услуги и расчёт</a>
-        <a class="btn btn--primary nav__cta" href="#lead" data-t="ui.book">Записаться</a>
-      </nav>
-
-      <div class="lang" role="group" aria-label="Выбор языка" data-t-attr="aria-label:ui.langLabel">
-        <button class="lang__btn" type="button" lang="ru" aria-label="Русский" data-lang="ru">RU</button>
-        <button class="lang__btn" type="button" lang="en" aria-label="English" data-lang="en">EN</button>
-      </div>
+      <a class="logo" href="index.html" translate="no" aria-label="Сириус&nbsp;— на главную" data-t-attr="aria-label:ui.logoLabel">
+        <img class="logo__mark logo__mark--on-light" src="img/logo/sirius-mark-light.svg" alt="" width="44" height="44">
+        <img class="logo__mark logo__mark--on-dark" src="img/logo/sirius-mark-dark.svg" alt="" width="44" height="44">
+        <span class="logo__text"><span class="logo__name">CIRIUS</span><span class="logo__sub">CONSULTING</span></span>
+      </a>
 
       <button class="burger" type="button" aria-label="Открыть меню" data-t-attr="aria-label:ui.menuOpen" aria-expanded="false" aria-controls="site-nav" data-burger>
         <span></span><span></span><span></span>
       </button>
+
+      <nav class="nav" id="site-nav" aria-label="Основная навигация" data-t-attr="aria-label:ui.navMain" data-nav>
+        <a class="nav__link" href="index.html" aria-current="page" data-t="ui.navHome">Главная</a>
+        <a class="nav__link" href="services.html" data-t="ui.navServices">Услуги и цены</a>
+        <a class="btn btn--primary nav__cta" href="#contacts" data-t="ui.contact">Связаться</a>
+      </nav>
+
+      <div class="lang" role="group" aria-label="Выбор языка" data-t-attr="aria-label:ui.langLabel">
+        <button class="lang__btn" type="button" lang="ru" aria-label="RU — Русский" data-lang="ru">RU</button>
+        <button class="lang__btn" type="button" lang="en" aria-label="EN — English" data-lang="en">EN</button>
+      </div>
+
+      <button class="theme-toggle" type="button" aria-label="Тёмная тема" title="Тёмная тема" aria-pressed="false" data-t-attr="aria-label:ui.themeDark;title:ui.themeDark" data-theme-toggle>
+        <svg class="icon theme-toggle__moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+        <svg class="icon theme-toggle__sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg>
+      </button>
+
     </div>
   </header>
 
   <main id="main">
-    <!-- ===== 1. Hero ===== -->
+    <!-- ===== Первый экран ===== -->
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero__bg" data-parallax>
-        <div class="media" data-label="Главное фото" data-t-attr="data-label:ui.heroPhoto" data-file="images/hero.jpg">
-          <img src="images/hero.jpg" alt="Чёрный автомобиль с идеально отполированным кузовом в студии NOIR Detail" data-t-attr="alt:ui.heroAlt" width="1920" height="1080" fetchpriority="high">
-        </div>
+      <div class="container hero__frame">
+        <figure class="media hero__visual">
+          <img src="img/hero-schengen.webp" srcset="img/hero-schengen-768.webp 768w, img/hero-schengen.webp 1536w" sizes="(max-width: 1440px) calc(100vw - 32px), 1300px" alt="Иллюстрация: счастливая девушка с паспортом и шенгенской визой, флаг Евросоюза, флаги стран Шенгена, Эйфелева башня, Колизей и самолёт в небе" data-t-attr="alt:home.hero.alt" width="1536" height="1024" fetchpriority="high">
+        </figure>
       </div>
-      <div class="hero__shade" aria-hidden="true"></div>
 
       <div class="container hero__content">
-        <p class="eyebrow" data-t="hero.eyebrow">Детейлинг-студия премиум-класса</p>
-        <h1 class="hero__title" id="hero-title" data-t="hero.title">Ваш автомобиль заслуживает <em>идеального блеска</em></h1>
-        <p class="hero__lead" data-t="hero.lead">Керамика и защита кузова на годы: глубокий блеск, стойкость к царапинам и реагентам, гарантия в договоре.</p>
+        <p class="eyebrow" data-t="home.hero.eyebrow">Шенгенские визы · Ташкент</p>
+        <h1 class="hero__title" id="hero-title" data-t="home.hero.title">Шенгенская виза&nbsp;— <em>спокойно и по правилам</em></h1>
+        <p class="hero__lead" data-t="home.hero.lead">Помогаем подготовиться к подаче на шенгенскую визу: определим страну подачи и тип визы, составим список документов и проверим их, заполним анкету и поможем с записью.</p>
         <div class="hero__actions">
-          <a class="btn btn--primary btn--lg" href="#lead" data-t="hero.ctaPrimary">Бесплатная диагностика кузова</a>
-          <a class="btn btn--ghost btn--lg" href="services.html#calc" data-t="hero.ctaSecondary">Рассчитать стоимость</a>
+          <a class="btn btn--primary btn--lg" href="#contacts" data-t="ui.contact">Связаться</a>
+          <a class="btn btn--ghost btn--lg" href="services.html" data-t="ui.navServices">Услуги и цены</a>
         </div>
       </div>
     </section>
 
-    <!-- ===== 3. Услуги ===== -->
+    <!-- ===== Услуги ===== -->
     <section class="section" id="services" aria-labelledby="services-title">
       <div class="container">
         <header class="section__head" data-reveal>
-          <p class="eyebrow" data-t="services.eyebrow">Услуги</p>
-          <h2 id="services-title" data-t="services.title">Всё для кузова и салона в одном боксе</h2>
-          <p class="section__lead" data-t="services.lead">Подбираем работы под состояние автомобиля. Точную цену называем после бесплатной диагностики.</p>
-        </header>
-        <div class="bento" data-render="services"></div>
-      </div>
-    </section>
-
-    <!-- ===== 4. До / После ===== -->
-    <section class="section section--tint" id="before-after" aria-labelledby="ba-title">
-      <div class="container">
-        <header class="section__head" data-reveal>
-          <p class="eyebrow" data-t="ba.eyebrow">До / После</p>
-          <h2 id="ba-title" data-t="ba.title">Разница видна сразу</h2>
-          <p class="section__lead" data-t="ba.lead">Потяните разделитель: слева кузов до работ, справа тот же автомобиль после полировки и керамики.</p>
+          <p class="eyebrow" data-t="home.services.eyebrow">Услуги</p>
+          <h2 id="services-title" data-t="home.services.title">Чем мы помогаем с визой</h2>
+          <p class="section__lead" data-t="home.services.lead">Можно обратиться за разовой консультацией или поручить нам подготовку целиком. Что входит в работу и сколько она стоит, договариваемся заранее.</p>
         </header>
 
-        <div class="ba" data-ba data-reveal>
-          <div class="ba__layer ba__layer--after">
-            <div class="media" data-label="После" data-t-attr="data-label:ui.after" data-file="images/after.jpg">
-              <img src="images/after.jpg" alt="Кузов после полировки: глубокий блеск без царапин" data-t-attr="alt:ui.afterAlt" width="1600" height="900" loading="lazy" decoding="async" draggable="false">
+        <div class="bento">
+          <article class="card card--lg" data-reveal>
+            <div class="media">
+              <img src="img/service-consult.webp" alt="Рука с ручкой над картой мира: планирование поездки" data-t-attr="alt:home.services.consult.alt" width="800" height="533" loading="lazy" decoding="async">
             </div>
-          </div>
-          <div class="ba__layer ba__layer--before">
-            <div class="media" data-label="До" data-t-attr="data-label:ui.before" data-file="images/before.jpg">
-              <img src="images/before.jpg" alt="Кузов до полировки: тусклый лак с мелкими царапинами" data-t-attr="alt:ui.beforeAlt" width="1600" height="900" loading="lazy" decoding="async" draggable="false">
+            <div class="card__body">
+              <span class="card__icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 4 3 6.5V20l6-2.5 6 2.5 6-2.5V4l-6 2.5z"/><path d="M9 4v13.5M15 6.5V20"/></svg></span>
+              <h3 data-t="svc.consult.name">Консультация по визе</h3>
+              <p data-t="svc.consult.short">Разберём цель поездки и вашу ситуацию, подскажем, в какое консульство подавать и какой тип визы нужен, оценим риск отказа.</p>
+              <a class="card__link" href="services.html#consult"><span data-t="ui.more">Подробнее</span><span class="sr-only" data-t="svc.consult.name">Консультация по визе</span><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
             </div>
-          </div>
-          <span class="ba__tag ba__tag--before" aria-hidden="true" data-t="ui.before">До</span>
-          <span class="ba__tag ba__tag--after" aria-hidden="true" data-t="ui.after">После</span>
-          <div class="ba__handle" role="slider" tabindex="0" aria-label="Положение разделителя до и после" data-t-attr="aria-label:ui.sliderLabel" aria-orientation="horizontal" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" data-ba-handle>
-            <span class="ba__grip" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 7-5 5 5 5M15 7l5 5-5 5"/></svg>
-            </span>
-          </div>
+          </article>
+
+          <article class="card" data-reveal>
+            <div class="media">
+              <img src="img/service-documents.webp" alt="Анкета на планшете, ручка и ноутбук на светлом столе" data-t-attr="alt:home.services.documents.alt" width="800" height="533" loading="lazy" decoding="async">
+            </div>
+            <div class="card__body">
+              <span class="card__icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5M9 14.5l2 2 4-4"/></svg></span>
+              <h3 data-t="svc.documents.name">Подготовка и проверка документов</h3>
+              <p data-t="svc.documents.short">Составим список документов под ваш случай и проверим справки, выписки и фото по требованиям консульства.</p>
+              <a class="card__link" href="services.html#documents"><span data-t="ui.more">Подробнее</span><span class="sr-only" data-t="svc.documents.name">Подготовка и проверка документов</span><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+
+          <article class="card card--plain" data-reveal>
+            <div class="card__body">
+              <span class="card__icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4M8.5 14.5l2 2 4-4"/></svg></span>
+              <h3 data-t="svc.application.name">Анкета и запись на подачу</h3>
+              <p data-t="svc.application.short">Аккуратно заполним визовую анкету и поможем записаться на подачу через официальную систему записи.</p>
+              <a class="card__link" href="services.html#application"><span data-t="ui.more">Подробнее</span><span class="sr-only" data-t="svc.application.name">Анкета и запись на подачу</span><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+
+          <article class="card" data-reveal>
+            <div class="media">
+              <img src="img/service-booking.webp" alt="Два белых чемодана в светлой комнате" data-t-attr="alt:home.services.booking.alt" width="800" height="533" loading="lazy" decoding="async">
+            </div>
+            <div class="card__body">
+              <span class="card__icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="7.5" width="17" height="12.5" rx="2"/><path d="M9 7.5v-2A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5v2M8 7.5V20M16 7.5V20"/></svg></span>
+              <h3 data-t="svc.booking.name">Бронирования и страховка</h3>
+              <p data-t="svc.booking.short">Поможем подтвердить проживание и маршрут, а также оформить медицинскую страховку для шенгенской визы.</p>
+              <a class="card__link" href="services.html#booking"><span data-t="ui.more">Подробнее</span><span class="sr-only" data-t="svc.booking.name">Бронирования и страховка</span><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+
+          <article class="card" data-reveal>
+            <div class="media">
+              <img src="img/service-interview.webp" alt="Руки и документы на светлом столе во время разговора" data-t-attr="alt:home.services.interview.alt" width="800" height="533" loading="lazy" decoding="async">
+            </div>
+            <div class="card__body">
+              <span class="card__icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5h11v8H8.5L4 16.5z"/><path d="M15 9h5v8.5L16.5 15H10v-2"/></svg></span>
+              <h3 data-t="svc.interview.name">Подготовка к подаче и собеседованию</h3>
+              <p data-t="svc.interview.short">Расскажем, как проходит подача, что могут спросить и как спокойно и честно объяснить цель поездки.</p>
+              <a class="card__link" href="services.html#interview"><span data-t="ui.more">Подробнее</span><span class="sr-only" data-t="svc.interview.name">Подготовка к подаче и собеседованию</span><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+
+          <article class="card card--plain" data-reveal>
+            <div class="card__body">
+              <span class="card__icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12a8 8 0 1 0 2.4-5.7"/><path d="M4 4.5V9h4.5"/></svg></span>
+              <h3 data-t="svc.refusal.name">Помощь после отказа</h3>
+              <p data-t="svc.refusal.short">Разберём письмо об отказе и указанные в нём причины, подскажем, что исправить, и подготовим повторную подачу.</p>
+              <a class="card__link" href="services.html#refusal"><span data-t="ui.more">Подробнее</span><span class="sr-only" data-t="svc.refusal.name">Помощь после отказа</span><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- ===== 5. Как мы работаем ===== -->
+    <!-- ===== С какими задачами приходят ===== -->
+    <section class="section section--tint" id="tasks" aria-labelledby="tasks-title">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow" data-t="home.tasks.eyebrow">С какими задачами приходят</p>
+          <h2 id="tasks-title" data-t="home.tasks.title">Узнаёте свою ситуацию?</h2>
+          <p class="section__lead" data-t="home.tasks.lead">Требования консульств различаются и меняются, а ошибка в документах может стоить поездки. Вот с чем к нам обращаются чаще всего.</p>
+        </header>
+
+        <div class="tasks">
+          <div class="media tasks__photo" data-reveal>
+            <img src="img/tasks-passport.webp" alt="Паспорт, блокнот и ноутбук на светлом деревянном столе" data-t-attr="alt:home.tasks.alt" width="1200" height="800" loading="lazy" decoding="async">
+          </div>
+          <ul class="tasks__list">
+            <li class="task" data-reveal>
+              <h3 data-t="home.tasks.t1.title">Первая шенгенская виза</h3>
+              <p data-t="home.tasks.t1.text">Не знаете, с чего начать, какие документы нужны и в какое консульство подавать.</p>
+            </li>
+            <li class="task" data-reveal>
+              <h3 data-t="home.tasks.t2.title">Уже был отказ</h3>
+              <p data-t="home.tasks.t2.text">Непонятно, что пошло не так, и страшно подавать снова с той же ошибкой.</p>
+            </li>
+            <li class="task" data-reveal>
+              <h3 data-t="home.tasks.t3.title">Нет времени разбираться</h3>
+              <p data-t="home.tasks.t3.text">Работа и семья, а нужно собрать справки, заполнить анкету и найти дату подачи.</p>
+            </li>
+            <li class="task" data-reveal>
+              <h3 data-t="home.tasks.t4.title">Деловая поездка</h3>
+              <p data-t="home.tasks.t4.text">Выставка, переговоры или приглашение партнёра&nbsp;— нужно правильно подтвердить цель поездки.</p>
+            </li>
+            <li class="task" data-reveal>
+              <h3 data-t="home.tasks.t5.title">Поездка всей семьёй</h3>
+              <p data-t="home.tasks.t5.text">Документы на детей, согласия родителей и справки для каждого члена семьи.</p>
+            </li>
+            <li class="task" data-reveal>
+              <h3 data-t="home.tasks.t6.title">Нестандартная ситуация</h3>
+              <p data-t="home.tasks.t6.text">Свой бизнес, неофициальная работа, учёба или пенсия&nbsp;— нужно понять, какими документами подтвердить финансы.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Как мы работаем ===== -->
     <section class="section" id="process" aria-labelledby="process-title">
       <div class="container">
         <header class="section__head" data-reveal>
-          <p class="eyebrow" data-t="process.eyebrow">Как мы работаем</p>
-          <h2 id="process-title" data-t="process.title">Четыре шага до идеального кузова</h2>
+          <p class="eyebrow" data-t="home.process.eyebrow">Как мы работаем</p>
+          <h2 id="process-title" data-t="home.process.title">Четыре шага от вопроса до подачи</h2>
         </header>
-        <ol class="timeline" data-render="steps" data-reveal></ol>
+        <ol class="timeline" data-reveal>
+          <li class="step">
+            <span class="step__num" aria-hidden="true">1</span>
+            <h3 data-t="home.process.s1.title">Консультация</h3>
+            <p data-t="home.process.s1.text">Разбираем цель поездки, вашу ситуацию и сроки. Подсказываем, куда и на какую визу подавать.</p>
+          </li>
+          <li class="step">
+            <span class="step__num" aria-hidden="true">2</span>
+            <h3 data-t="home.process.s2.title">Договор и список документов</h3>
+            <p data-t="home.process.s2.text">Фиксируем объём работы и стоимость, даём список документов именно под ваш случай.</p>
+          </li>
+          <li class="step">
+            <span class="step__num" aria-hidden="true">3</span>
+            <h3 data-t="home.process.s3.title">Подготовка документов</h3>
+            <p data-t="home.process.s3.text">Проверяем документы, заполняем анкету, помогаем с записью на подачу и готовим вас к ней.</p>
+          </li>
+          <li class="step">
+            <span class="step__num" aria-hidden="true">4</span>
+            <h3 data-t="home.process.s4.title">Подача и решение</h3>
+            <p data-t="home.process.s4.text">Документы вы, как правило, подаёте лично в визовом центре или консульстве, а мы остаёмся на связи до решения.</p>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <!-- ===== 6. Почему NOIR Detail ===== -->
+    <!-- ===== Почему мы ===== -->
     <section class="section section--tint" id="why" aria-labelledby="why-title">
       <div class="container">
         <header class="section__head" data-reveal>
-          <p class="eyebrow" data-t="why.eyebrow">Почему NOIR Detail</p>
-          <h2 id="why-title" data-t="why.title">Отвечаем за результат документально</h2>
+          <p class="eyebrow" data-t="home.why.eyebrow">Почему «Сириус»</p>
+          <h2 id="why-title" data-t="home.why.title">Принципы, на которых строим работу</h2>
         </header>
-        <div class="features" data-render="advantages"></div>
+        <div class="features">
+          <article class="feature" data-reveal>
+            <span class="card__icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 5 6v5c0 4.6 2.9 8.3 7 10 4.1-1.7 7-5.4 7-10V6z"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <h3 data-t="home.why.f1.title">Честно о шансах</h3>
+            <p data-t="home.why.f1.text">Решение о визе принимает только консульство, и гарантировать одобрение не может никто. Мы трезво оцениваем риски и помогаем подать полный и аккуратный пакет документов.</p>
+          </article>
+          <article class="feature" data-reveal>
+            <span class="card__icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12.2V4a1 1 0 0 1 1-1h8.2l8.8 8.8-9.2 9.2z"/><circle cx="8" cy="8" r="1.5"/></svg></span>
+            <h3 data-t="home.why.f2.title">Прозрачные цены</h3>
+            <p data-t="home.why.f2.text">Сразу говорим, что входит в стоимость наших услуг, а что оплачивается отдельно: консульский сбор и сервисный сбор визового центра.</p>
+          </article>
+          <article class="feature" data-reveal>
+            <span class="card__icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4.5" y="10.5" width="15" height="10.5" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5M12 14.5v2.5"/></svg></span>
+            <h3 data-t="home.why.f3.title">Конфиденциальность</h3>
+            <p data-t="home.why.f3.text">Паспортные данные и документы используем только для вашего заявления на визу. Условия работы с ними прописываем в договоре.</p>
+          </article>
+          <article class="feature" data-reveal>
+            <span class="card__icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5h16v11H9.5L4 20z"/><path d="M8 9.5h8M8 12.5h5"/></svg></span>
+            <h3 data-t="home.why.f4.title">Понятный язык</h3>
+            <p data-t="home.why.f4.text">Объясняем требования консульств простыми словами, без сложных терминов.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!-- ===== 7. Галерея ===== -->
+    <!-- ===== Атмосферные фото ===== -->
     <section class="section" id="gallery" aria-labelledby="gallery-title">
       <div class="container">
         <header class="section__head" data-reveal>
-          <p class="eyebrow" data-t="gallery.eyebrow">Галерея</p>
-          <h2 id="gallery-title" data-t="gallery.title">Наши работы</h2>
+          <p class="eyebrow" data-t="home.gallery.eyebrow">Путешествия</p>
+          <h2 id="gallery-title" data-t="home.gallery.title">Европа ближе, чем кажется</h2>
         </header>
-        <div class="gallery" data-render="gallery"></div>
+        <div class="gallery">
+          <figure class="media gallery__item" data-reveal>
+            <img src="img/atmos-europe-1.webp" alt="Прага днём: Пражский град над Влтавой" data-t-attr="alt:home.gallery.a1" width="1200" height="800" loading="lazy" decoding="async">
+          </figure>
+          <figure class="media gallery__item" data-reveal>
+            <img src="img/atmos-airport.webp" alt="Крыло самолёта над облаками" data-t-attr="alt:home.gallery.a2" width="1200" height="800" loading="lazy" decoding="async">
+          </figure>
+          <figure class="media gallery__item" data-reveal>
+            <img src="img/atmos-europe-2.webp" alt="Лиссабон: черепичные крыши района Алфама" data-t-attr="alt:home.gallery.a3" width="1200" height="800" loading="lazy" decoding="async">
+          </figure>
+          <figure class="media gallery__item" data-reveal>
+            <img src="img/atmos-travel.webp" alt="Паспорт, соломенная шляпа, очки и игрушечный самолётик на светлом дереве" data-t-attr="alt:home.gallery.a4" width="1200" height="800" loading="lazy" decoding="async">
+          </figure>
+        </div>
       </div>
     </section>
 
-    <!-- ===== 9. FAQ ===== -->
-    <section class="section" id="faq" aria-labelledby="faq-title">
+    <!-- ===== FAQ ===== -->
+    <section class="section section--tint" id="faq" aria-labelledby="faq-title">
       <div class="container container--narrow">
         <header class="section__head" data-reveal>
-          <p class="eyebrow" data-t="faq.eyebrow">Частые вопросы</p>
-          <h2 id="faq-title" data-t="faq.title">Отвечаем до того, как вы спросите</h2>
+          <p class="eyebrow" data-t="home.faq.eyebrow">Частые вопросы</p>
+          <h2 id="faq-title" data-t="home.faq.title">Что спрашивают перед оформлением визы</h2>
         </header>
-        <div class="faq" data-render="faq" data-reveal></div>
+        <div class="faq" data-reveal>
+          <details class="faq__item" open>
+            <summary class="faq__q"><span data-t="home.faq.q1">Вы гарантируете получение визы?</span><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="faq__a"><p data-t="home.faq.a1">Нет, и честный консультант не может этого обещать: решение принимает только консульство. Мы помогаем подготовить полный и аккуратный пакет документов, чтобы снизить риск отказа из-за ошибок и недочётов.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q"><span data-t="home.faq.q2">Сколько стоят ваши услуги?</span><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="faq__a"><p data-t="home.faq.a2">Зависит от страны, цели поездки и объёма работы. Ориентиры&nbsp;— на странице <a href="services.html#packages">«Услуги и цены»</a>. Консульский сбор и сервисный сбор визового центра оплачиваются отдельно: размер консульского сбора установлен правилами ЕС, сервисного&nbsp;— визовым центром.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q"><span data-t="home.faq.q3">С какими странами вы работаете?</span><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="faq__a"><p data-t="home.faq.a3">[ЗАПОЛНИТЬ: все страны Шенгенской зоны или список стран]. Визы в другие страны: [ЗАПОЛНИТЬ: помогаете ли с визами в Великобританию, США и другие страны].</p></div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q"><span data-t="home.faq.q4">Сколько времени занимает оформление?</span><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="faq__a"><p data-t="home.faq.a4">Подготовка документов обычно занимает [ЗАПОЛНИТЬ: типичный срок]. По правилам ЕС заявление рассматривают, как правило, до 15&nbsp;календарных дней со дня подачи, в отдельных случаях&nbsp;— до 45&nbsp;дней. Время ожидания записи на подачу в этот срок не входит. Подать заявление можно не раньше чем за 6&nbsp;месяцев и, как правило, не позднее чем за 15&nbsp;календарных дней до поездки, поэтому лучше начинать заранее.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q"><span data-t="home.faq.q5">Нужно ли приходить лично?</span><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="faq__a"><p data-t="home.faq.a5">Документы и отпечатки пальцев обычно сдают лично в визовом центре или консульстве. А консультироваться и готовить документы с нами можно дистанционно&nbsp;— по телефону или в Telegram, приезжать к нам не нужно.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q"><span data-t="home.faq.q6">У меня уже был отказ. Вы поможете?</span><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="faq__a"><p data-t="home.faq.a6">Да. Разберём письмо об отказе и указанные причины, подскажем, что можно исправить, и поможем подготовить повторную подачу. Отказ также можно обжаловать по законам страны, которая его вынесла: порядок и срок указаны в письме об отказе.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q"><span data-t="home.faq.q7">Какие документы нужны для шенгенской визы?</span><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="faq__a"><p data-t="home.faq.a7">Обычно это загранпаспорт, фото, анкета, медицинская страховка и документы о цели поездки, проживании, маршруте, финансах и работе или учёбе. Паспорт должен быть выдан не более 10&nbsp;лет назад, действовать ещё минимум 3&nbsp;месяца после поездки и иметь 2&nbsp;чистые страницы. Точный список зависит от страны и вашей ситуации&nbsp;— дадим его после консультации.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q"><span data-t="home.faq.q8">Что вы делаете с моими документами?</span><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="faq__a"><p data-t="home.faq.a8">Используем их только для подготовки вашего заявления на визу. Условия работы с документами прописываем в договоре. [ЗАПОЛНИТЬ: как храните копии документов и когда их удаляете].</p></div>
+          </details>
+        </div>
       </div>
     </section>
 
-    <!-- ===== 10. Захват заявки ===== -->
-    <section class="section lead" id="lead" aria-labelledby="lead-title" data-booking-section>
-      <div class="container lead__grid">
-        <div class="lead__info" data-reveal>
-          <p class="eyebrow" data-t="lead.eyebrow">Акция для новых клиентов</p>
-          <h2 id="lead-title" data-t="lead.title">Бесплатная диагностика кузова + скидка 15%</h2>
-          <p class="section__lead" data-t="lead.lead">Замерим толщину лака, покажем дефекты под лампой и назовём точную цену. Это ни к чему не обязывает.</p>
-
-          <div class="urgency">
-            <p class="urgency__seats"><span class="urgency__pulse" aria-hidden="true"></span><span data-promo-seats></span></p>
-            <div class="urgency__timer" data-countdown>
-              <p class="urgency__label" data-t="lead.timerLabel">До конца акции:</p>
-              <div class="countdown" role="timer">
-                <div><b data-unit="d">00</b><span data-t="ui.days">дней</span></div>
-                <div><b data-unit="h">00</b><span data-t="ui.hours">часов</span></div>
-                <div><b data-unit="m">00</b><span data-t="ui.minutes">минут</span></div>
-                <div><b data-unit="s">00</b><span data-t="ui.seconds">секунд</span></div>
-              </div>
-            </div>
+    <!-- ===== Связаться ===== -->
+    <section class="section contact" id="contacts" aria-labelledby="contacts-title">
+      <div class="container contact__grid">
+        <div data-reveal>
+          <p class="eyebrow" data-t="contact.eyebrow">Связаться</p>
+          <h2 id="contacts-title" data-t="contact.title">Расскажите о поездке&nbsp;— <em>подскажем, с чего начать</em></h2>
+          <p class="section__lead" data-t="contact.lead">Напишите в Telegram или позвоните: разберём вашу ситуацию и предложим формат работы.</p>
+          <p class="contact__note" data-t="contact.note">Условия первой консультации: [ЗАПОЛНИТЬ: бесплатно или стоимость, длительность, формат].</p>
+          <div class="contact__actions">
+            <a class="btn btn--primary btn--lg" href="https://t.me/Djimbo9" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 4.5 3.5 11.2c-.8.3-.8 1.3 0 1.5l4.3 1.3 1.7 5.1c.2.6 1 .8 1.5.3l2.4-2.3 4.4 3.2c.6.4 1.4.1 1.5-.6L22 5.4c.1-.7-.5-1.2-1-.9z"/><path d="m8 14 9.5-6.5-6.5 7.5"/></svg><span data-t="ui.telegram">Написать в Telegram</span></a>
+            <a class="btn btn--ghost btn--lg" href="tel:+998915256856"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 3.5h4l1.6 5-2.3 1.8a12 12 0 0 0 5.4 5.4l1.8-2.3 5 1.6v4a1.5 1.5 0 0 1-1.6 1.5C10.5 19.8 4.2 13.5 3.5 5.1A1.5 1.5 0 0 1 5 3.5z"/></svg><span data-t="ui.call">Позвонить</span></a>
           </div>
         </div>
 
-        <div class="form-card gradient-border" data-reveal>
-          <form class="form" data-lead-form="home" novalidate>
-            <h3 class="form__title" data-t="lead.formTitle">Записаться на диагностику</h3>
-            <div class="field">
-              <label for="lead-name" data-t="ui.formName">Ваше имя</label>
-              <input id="lead-name" name="name" type="text" autocomplete="name" placeholder="Как к вам обращаться" data-t-attr="placeholder:ui.formNamePh" data-rule="name" required>
+        <div class="contact-card" data-reveal>
+          <h3 data-t="ui.contacts">Контакты</h3>
+          <address class="contact-list">
+            <div class="contact-list__row">
+              <svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 3.5h4l1.6 5-2.3 1.8a12 12 0 0 0 5.4 5.4l1.8-2.3 5 1.6v4a1.5 1.5 0 0 1-1.6 1.5C10.5 19.8 4.2 13.5 3.5 5.1A1.5 1.5 0 0 1 5 3.5z"/></svg>
+              <div><span class="contact-list__label" data-t="ui.phone">Телефон</span><a class="contact-list__value" href="tel:+998915256856" translate="no">+998&nbsp;91&nbsp;525&nbsp;68&nbsp;56</a></div>
             </div>
-            <div class="field">
-              <label for="lead-phone" data-t="ui.formPhone">Телефон</label>
-              <input id="lead-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" data-phone data-rule="phone" required>
+            <div class="contact-list__row">
+              <svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 4.5 3.5 11.2c-.8.3-.8 1.3 0 1.5l4.3 1.3 1.7 5.1c.2.6 1 .8 1.5.3l2.4-2.3 4.4 3.2c.6.4 1.4.1 1.5-.6L22 5.4c.1-.7-.5-1.2-1-.9z"/><path d="m8 14 9.5-6.5-6.5 7.5"/></svg>
+              <div><span class="contact-list__label">Telegram</span><a class="contact-list__value" href="https://t.me/Djimbo9" translate="no" target="_blank" rel="noopener">@Djimbo9</a></div>
             </div>
-            <div class="field">
-              <label for="lead-car" data-t="ui.formCar">Марка автомобиля</label>
-              <input id="lead-car" name="car" type="text" autocomplete="off" placeholder="Например, BMW X5" data-t-attr="placeholder:ui.formCarPh" data-rule="car" required>
-            </div>
-            <div class="field">
-              <label for="lead-service" data-t="ui.formService">Услуга</label>
-              <select id="lead-service" name="service" data-service-select data-rule="service" required>
-                <option value="" data-t="ui.formServicePick">Выберите услугу</option>
-              </select>
-            </div>
-            <button class="btn btn--primary btn--lg btn--block" type="submit" data-t="lead.submit">Получить диагностику и скидку</button>
-            <p class="form__note" data-t="lead.note">Перезвоним в течение 15 минут в рабочее время. Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
-          </form>
+          </address>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ===== Футер ===== -->
+  <!-- ===== Футер (одинаковый на обеих страницах) ===== -->
   <footer class="footer">
     <div class="container footer__grid">
       <div class="footer__brand">
-        <a class="logo" href="index.html" aria-label="NOIR Detail — на главную" data-t-attr="aria-label:ui.logoLabel">NOIR<span class="logo__dot" aria-hidden="true"></span><span class="logo__sub">Detail</span></a>
-        <p data-t="footer.tagline">Премиум-детейлинг и керамика для автомобилей, за которыми хочется ухаживать.</p>
+        <a class="logo" href="index.html" translate="no" aria-label="Сириус&nbsp;— на главную" data-t-attr="aria-label:ui.logoLabel">
+          <img class="logo__mark logo__mark--on-light" src="img/logo/sirius-mark-light.svg" alt="" width="44" height="44" loading="lazy">
+          <img class="logo__mark logo__mark--on-dark" src="img/logo/sirius-mark-dark.svg" alt="" width="44" height="44" loading="lazy">
+          <span class="logo__text"><span class="logo__name">CIRIUS</span><span class="logo__sub">CONSULTING</span></span>
+        </a>
+        <p data-t="footer.tagline">Визовый консалтинг в Ташкенте: помощь с шенгенской визой&nbsp;— от консультации до подачи документов.</p>
       </div>
       <div>
-        <h2 class="footer__title" data-t="ui.footerContacts">Контакты</h2>
+        <h2 class="footer__title" data-t="ui.contacts">Контакты</h2>
         <address class="footer__list">
-          <span data-t="contacts.address">Ташкент, Яшнабадский район, ул. Шёлковая, 17</span>
-          <a data-href="telegram" href="#" target="_blank" rel="noopener" data-t="ui.footerTelegram">Написать в Telegram</a>
+          <a href="tel:+998915256856" translate="no">+998&nbsp;91&nbsp;525&nbsp;68&nbsp;56</a>
+          <a href="https://t.me/Djimbo9" target="_blank" rel="noopener">Telegram</a>
         </address>
       </div>
-      <div>
-        <h2 class="footer__title" data-t="ui.footerHours">Часы работы</h2>
-        <p class="footer__list" data-t="contacts.hours">Ежедневно, 9:00–21:00</p>
-      </div>
       <nav aria-label="Навигация в футере" data-t-attr="aria-label:ui.navFooter">
-        <h2 class="footer__title" data-t="ui.footerSections">Разделы</h2>
+        <h2 class="footer__title" data-t="ui.sections">Разделы</h2>
         <div class="footer__list">
           <a href="index.html" data-t="ui.navHome">Главная</a>
-          <a href="services.html" data-t="ui.navServices">Услуги и расчёт</a>
-          <a href="#lead" data-t="ui.book">Записаться</a>
+          <a href="services.html" data-t="ui.navServices">Услуги и цены</a>
+          <a href="#contacts" data-t="ui.contacts">Контакты</a>
         </div>
       </nav>
-      <div>
-        <h2 class="footer__title" data-t="ui.footerSocials">Соцсети</h2>
-        <div class="socials" data-render="socials"></div>
-      </div>
     </div>
     <div class="container footer__bottom">
-      <p>© <span data-year>2026</span> NOIR Detail. <span data-t="ui.rights">Все права защищены.</span></p>
+      <p>© <span data-year>2026</span> <span data-t="footer.copy">Сириус (Cirius Consulting). Все права защищены.</span></p>
     </div>
   </footer>
 
-  <noscript>
-    <p class="noscript">Для калькулятора и записи онлайн включите JavaScript. Please enable JavaScript to use the calculator and booking form.</p>
-  </noscript>
+  <!-- Кнопка чата: ведёт в Telegram -->
+  <a class="fab" href="https://t.me/Djimbo9" target="_blank" rel="noopener" aria-label="Написать в Telegram" data-t-attr="aria-label:ui.telegram" data-fab><svg class="icon" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 4.5 3.5 11.2c-.8.3-.8 1.3 0 1.5l4.3 1.3 1.7 5.1c.2.6 1 .8 1.5.3l2.4-2.3 4.4 3.2c.6.4 1.4.1 1.5-.6L22 5.4c.1-.7-.5-1.2-1-.9z"/><path d="m8 14 9.5-6.5-6.5 7.5"/></svg></a>
 
+  <!-- Нижняя панель на телефоне -->
+  <div class="mobile-bar">
+    <a class="btn btn--ghost" href="tel:+998915256856"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 3.5h4l1.6 5-2.3 1.8a12 12 0 0 0 5.4 5.4l1.8-2.3 5 1.6v4a1.5 1.5 0 0 1-1.6 1.5C10.5 19.8 4.2 13.5 3.5 5.1A1.5 1.5 0 0 1 5 3.5z"/></svg><span data-t="ui.call">Позвонить</span></a>
+    <a class="btn btn--primary" href="https://t.me/Djimbo9" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 4.5 3.5 11.2c-.8.3-.8 1.3 0 1.5l4.3 1.3 1.7 5.1c.2.6 1 .8 1.5.3l2.4-2.3 4.4 3.2c.6.4 1.4.1 1.5-.6L22 5.4c.1-.7-.5-1.2-1-.9z"/><path d="m8 14 9.5-6.5-6.5 7.5"/></svg>Telegram</a>
+  </div>
+
+  <script src="js/i18n-en.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
 </html>

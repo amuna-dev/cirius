@@ -1,0 +1,14 @@
+{
+  "name": "Сириус — визовый консалтинг",
+  "short_name": "Сириус",
+  "description": "Помощь с шенгенской визой в Ташкенте",
+  "lang": "ru",
+  "start_url": "/",
+  "display": "browser",
+  "theme_color": "#F7F4EE",
+  "background_color": "#F7F4EE",
+  "icons": [
+    { "src": "img/logo/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "img/logo/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

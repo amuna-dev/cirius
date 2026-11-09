@@ -3,262 +3,402 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Услуги и расчёт стоимости — NOIR Detail</title>
-  <meta name="description" content="Пакеты детейлинга, онлайн-калькулятор стоимости и запись в студию NOIR Detail. Полировка, керамика, химчистка и плёнка PPF с гарантией в договоре.">
-  <meta name="theme-color" content="#0A0A0C">
+  <title>Цены на визовый консалтинг в Ташкенте: шенгенская виза | Сириус</title>
+  <meta name="description" content="Стоимость помощи с шенгенской визой в Ташкенте: консультация, подготовка документов под ключ, помощь после отказа. Визовый консалтинг «Сириус».">
+  <meta name="theme-color" content="#F7F4EE">
+  <link rel="canonical" href="https://[ДОМЕН]/services.html">
 
-  <!-- Open Graph. После публикации замените og:image и og:url на абсолютные адреса сайта -->
+  <!-- Open Graph. [ДОМЕН] заменить на адрес сайта после публикации -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
-  <meta property="og:site_name" content="NOIR Detail">
-  <meta property="og:title" content="Услуги и расчёт стоимости — NOIR Detail">
-  <meta property="og:description" content="Сравните пакеты, рассчитайте стоимость онлайн и запишитесь в удобный день.">
-  <meta property="og:image" content="https://noirdetail1.netlify.app/images/hero.jpg">
-  <meta property="og:url" content="https://noirdetail1.netlify.app/services">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Сириус — визовый консалтинг">
+  <meta property="og:title" content="Услуги и цены — помощь с шенгенской визой | Сириус">
+  <meta property="og:description" content="Консультация, подготовка под ключ или помощь после отказа: сравните форматы и выберите подходящий.">
+  <meta property="og:image" content="https://[ДОМЕН]/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://[ДОМЕН]/services.html">
+  <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A0A0C'/%3E%3Cpath d='M9 23V9h2.6l8 10V9H23v14h-2.6l-8-10v10z' fill='%23fff'/%3E%3Ccircle cx='26' cy='26' r='3' fill='%2300E5FF'/%3E%3C/svg%3E">
+  <link rel="icon" href="img/logo/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="img/logo/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="img/logo/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
 
-  <!-- Space Grotesk без кириллицы: латиница и цифры берутся из него, кириллица — из Manrope -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap">
-
+  <link rel="preload" href="fonts/montserrat-cyrillic-300.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/montserrat-cyrillic-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
-  <script>
-    /* Язык: ссылка с ?lang=, затем выбор посетителя, затем язык браузера.
-       Пока main.js подставляет английские тексты, страница скрыта, чтобы не мелькал русский */
-    (function () {
-      var root = document.documentElement;
-      var param = new URLSearchParams(location.search).get('lang');
-      var saved = null;
-      try { saved = localStorage.getItem('noir_lang'); } catch (e) {}
-      var lang = param === 'ru' || param === 'en' ? param : saved || (navigator.language || 'en');
-      root.lang = /^(ru|uk|be|kk|uz)/i.test(lang) ? 'ru' : 'en';
-      root.classList.add('js');
-      if (root.lang === 'en') {
-        root.classList.add('i18n-pending');
-        setTimeout(function () { root.classList.remove('i18n-pending'); }, 1500);
-      }
-    })();
-  </script>
+  <script src="js/init.js"></script>
 </head>
 <body data-page="services">
   <a class="skip-link" href="#main" data-t="ui.skip">Перейти к содержанию</a>
 
-  <!-- ===== Шапка ===== -->
+  <!-- ===== Шапка (одинаковая на обеих страницах) ===== -->
   <header class="header" data-header>
     <div class="container header__inner">
-      <a class="logo" href="index.html" aria-label="NOIR Detail — на главную" data-t-attr="aria-label:ui.logoLabel">NOIR<span class="logo__dot" aria-hidden="true"></span><span class="logo__sub">Detail</span></a>
-
-      <nav class="nav" id="site-nav" aria-label="Основная навигация" data-t-attr="aria-label:ui.navMain" data-nav>
-        <a class="nav__link" href="index.html" data-t="ui.navHome">Главная</a>
-        <a class="nav__link" href="services.html" aria-current="page" data-t="ui.navServices">Услуги и расчёт</a>
-        <a class="btn btn--primary nav__cta" href="#booking" data-t="ui.book">Записаться</a>
-      </nav>
-
-      <div class="lang" role="group" aria-label="Выбор языка" data-t-attr="aria-label:ui.langLabel">
-        <button class="lang__btn" type="button" lang="ru" aria-label="Русский" data-lang="ru">RU</button>
-        <button class="lang__btn" type="button" lang="en" aria-label="English" data-lang="en">EN</button>
-      </div>
+      <a class="logo" href="index.html" translate="no" aria-label="Сириус&nbsp;— на главную" data-t-attr="aria-label:ui.logoLabel">
+        <img class="logo__mark logo__mark--on-light" src="img/logo/sirius-mark-light.svg" alt="" width="44" height="44">
+        <img class="logo__mark logo__mark--on-dark" src="img/logo/sirius-mark-dark.svg" alt="" width="44" height="44">
+        <span class="logo__text"><span class="logo__name">CIRIUS</span><span class="logo__sub">CONSULTING</span></span>
+      </a>
 
       <button class="burger" type="button" aria-label="Открыть меню" data-t-attr="aria-label:ui.menuOpen" aria-expanded="false" aria-controls="site-nav" data-burger>
         <span></span><span></span><span></span>
       </button>
+
+      <nav class="nav" id="site-nav" aria-label="Основная навигация" data-t-attr="aria-label:ui.navMain" data-nav>
+        <a class="nav__link" href="index.html" data-t="ui.navHome">Главная</a>
+        <a class="nav__link" href="services.html" aria-current="page" data-t="ui.navServices">Услуги и цены</a>
+        <a class="btn btn--primary nav__cta" href="#contacts" data-t="ui.contact">Связаться</a>
+      </nav>
+
+      <div class="lang" role="group" aria-label="Выбор языка" data-t-attr="aria-label:ui.langLabel">
+        <button class="lang__btn" type="button" lang="ru" aria-label="RU — Русский" data-lang="ru">RU</button>
+        <button class="lang__btn" type="button" lang="en" aria-label="EN — English" data-lang="en">EN</button>
+      </div>
+
+      <button class="theme-toggle" type="button" aria-label="Тёмная тема" title="Тёмная тема" aria-pressed="false" data-t-attr="aria-label:ui.themeDark;title:ui.themeDark" data-theme-toggle>
+        <svg class="icon theme-toggle__moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+        <svg class="icon theme-toggle__sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg>
+      </button>
+
     </div>
   </header>
 
   <main id="main">
-    <!-- ===== 1. Компактный hero ===== -->
+    <!-- ===== Компактный первый экран ===== -->
     <section class="page-hero" aria-labelledby="page-title">
       <div class="container">
-        <p class="eyebrow" data-t="sv.eyebrow">Пакеты, цены, запись</p>
-        <h1 id="page-title" data-t="sv.title">Услуги и расчёт стоимости</h1>
-        <p class="section__lead" data-t="sv.lead">Выберите готовый пакет или соберите свой набор работ в калькуляторе. Выбор сразу попадёт в форму записи.</p>
+        <p class="eyebrow" data-t="sv.hero.eyebrow">Шенгенские визы · услуги и цены</p>
+        <h1 id="page-title" data-t="sv.hero.title">Помощь с визой: форматы и <em>стоимость</em></h1>
+        <p class="section__lead" data-t="sv.hero.lead">Разовая консультация, подготовка под ключ или помощь после отказа. Точную стоимость называем после разговора о вашей поездке и фиксируем в договоре.</p>
         <nav class="chips" aria-label="Разделы страницы" data-t-attr="aria-label:ui.chipsNav">
-          <a class="chip" href="#packages" data-t="ui.chipPackages">Пакеты</a>
-          <a class="chip" href="#calc" data-t="ui.chipCalc">Калькулятор</a>
-          <a class="chip" href="#compare" data-t="ui.chipCompare">Сравнение</a>
-          <a class="chip" href="#booking" data-t="ui.chipBooking">Запись</a>
+          <a class="chip" href="#packages" data-t="sv.chips.packages">Пакеты</a>
+          <a class="chip" href="#compare" data-t="sv.chips.compare">Сравнение</a>
+          <a class="chip" href="#all-services" data-t="sv.chips.list">Все услуги</a>
+          <a class="chip" href="#contacts" data-t="ui.contacts">Контакты</a>
         </nav>
       </div>
     </section>
 
-    <!-- ===== 2. Пакеты ===== -->
+    <!-- ===== Пакеты ===== -->
     <section class="section section--flush-top" id="packages" aria-labelledby="packages-title">
       <div class="container">
         <header class="section__head" data-reveal>
-          <p class="eyebrow" data-t="packages.eyebrow">Пакеты</p>
-          <h2 id="packages-title" data-t="packages.title">Три готовых решения</h2>
-          <p class="section__lead" data-t="packages.lead">Цены указаны для седана. Для других классов рассчитайте стоимость в калькуляторе.</p>
-        </header>
-        <div class="packages" data-render="packages"></div>
-      </div>
-    </section>
-
-    <!-- ===== 3. Калькулятор ===== -->
-    <section class="section section--tint" id="calc" aria-labelledby="calc-title">
-      <div class="container">
-        <header class="section__head" data-reveal>
-          <p class="eyebrow" data-t="calc.eyebrow">Калькулятор</p>
-          <h2 id="calc-title" data-t="calc.title">Рассчитайте стоимость за минуту</h2>
-          <p class="section__lead" data-t="calc.lead">Цена ориентировочная: точную сумму назовём после бесплатной диагностики.</p>
+          <p class="eyebrow" data-t="sv.packages.eyebrow">Пакеты</p>
+          <h2 id="packages-title" data-t="sv.packages.title">Три формата работы</h2>
+          <p class="section__lead" data-t="sv.packages.lead">Стоимость зависит от страны, цели поездки и сложности случая. Консульский сбор и сервисный сбор визового центра оплачиваются отдельно.</p>
         </header>
 
-        <form class="calc" data-calc data-reveal>
-          <div class="calc__options">
-            <fieldset class="calc__group">
-              <legend data-t="ui.calcStep1">1. Класс автомобиля</legend>
-              <div class="tiles tiles--classes" data-calc-classes></div>
-            </fieldset>
-            <fieldset class="calc__group">
-              <legend data-t="ui.calcStep2">2. Услуги</legend>
-              <div class="tiles" data-calc-services></div>
-            </fieldset>
-          </div>
+        <div class="packages">
+          <article class="package" data-reveal>
+            <h3 data-t="sv.p1.name">Консультация</h3>
+            <p class="package__desc" data-t="sv.p1.desc">Разговор о вашей поездке: куда подавать, какая виза нужна и что подготовить.</p>
+            <p class="package__price">[ЦЕНА]</p>
+            <p class="package__term"><svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-t="sv.p1.term">Одна встреча или созвон</span></p>
+            <ul class="package__list">
+              <li><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span data-t="sv.p1.i1">Разбор цели поездки и вашей ситуации</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span data-t="sv.p1.i2">Определение страны подачи и типа визы</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span data-t="sv.p1.i3">Список документов под ваш случай</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span data-t="sv.p1.i4">Ответы на ваши вопросы</span></li>
+            </ul>
+            <a class="btn btn--ghost btn--block" href="https://t.me/Djimbo9" target="_blank" rel="noopener"><span data-t="ui.discussTelegram">Обсудить в Telegram</span><span class="sr-only" data-t="sv.p1.sr">&nbsp;— пакет «Консультация»</span></a>
+          </article>
 
-          <aside class="calc__result gradient-border" aria-label="Итог расчёта" data-t-attr="aria-label:ui.calcResult">
-            <p class="calc__label" data-t="ui.calcTotal">Итого</p>
-            <p class="calc__total" data-calc-total>$0</p>
-            <p class="calc__discount" data-calc-discount></p>
-            <ul class="calc__lines" data-calc-lines></ul>
-            <p class="sr-only" aria-live="polite" data-calc-live></p>
-            <button class="btn btn--primary btn--lg btn--block" type="button" data-calc-book data-t="ui.calcBook">Записаться на этот расчёт</button>
-            <p class="calc__hint" data-calc-hint data-t="ui.calcHint" hidden>Выберите хотя бы одну услугу</p>
-          </aside>
-        </form>
-      </div>
-    </section>
+          <article class="package package--popular" data-reveal>
+            <span class="package__badge" data-t="sv.p2.badge">Рекомендуем</span>
+            <h3 data-t="sv.p2.name">Под ключ</h3>
+            <p class="package__desc" data-t="sv.p2.desc">Готовим документы к подаче: от консультации до записи на подачу.</p>
+            <p class="package__price">[ЦЕНА]</p>
+            <p class="package__term"><svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-t="sv.p2.term">Срок подготовки: [ЗАПОЛНИТЬ]</span></p>
+            <ul class="package__list">
+              <li><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span data-t="sv.p2.i1">Консультация по визе</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span data-t="sv.p2.i2">Список документов и их проверка</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span data-t="sv.p2.i3">Заполнение визовой анкеты</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span data-t="sv.p2.i4">Помощь с записью на подачу</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span data-t="sv.p2.i5">Подготовка к подаче и собеседованию</span></li>
+            </ul>
+            <a class="btn btn--primary btn--block" href="https://t.me/Djimbo9" target="_blank" rel="noopener"><span data-t="ui.discussTelegram">Обсудить в Telegram</span><span class="sr-only" data-t="sv.p2.sr">&nbsp;— пакет «Под ключ»</span></a>
+          </article>
 
-    <!-- ===== 4. Таблица сравнения ===== -->
-    <section class="section" id="compare" aria-labelledby="compare-title">
-      <div class="container container--narrow">
-        <header class="section__head" data-reveal>
-          <p class="eyebrow" data-t="compare.eyebrow">Сравнение</p>
-          <h2 id="compare-title" data-t="compare.title">Что входит в каждый пакет</h2>
-        </header>
-        <div data-render="compare" data-reveal></div>
-      </div>
-    </section>
-
-    <!-- ===== 5. Форма записи ===== -->
-    <section class="section lead" id="booking" aria-labelledby="booking-title" data-booking-section>
-      <div class="container container--narrow">
-        <header class="section__head" data-reveal>
-          <p class="eyebrow" data-t="booking.eyebrow">Запись</p>
-          <h2 id="booking-title" data-t="booking.title">Запишитесь в удобный день</h2>
-          <p class="section__lead" data-t="booking.lead">Оставьте заявку, и мы перезвоним, чтобы подтвердить дату и время.</p>
-        </header>
-
-        <div class="form-card gradient-border" data-reveal>
-          <form class="form form--wide" data-lead-form="services" novalidate>
-            <div class="form-summary" data-form-summary tabindex="-1" hidden>
-              <span class="form-summary__icon" data-icon="check"></span>
-              <p><b data-summary-title></b><span data-summary-text></span></p>
-              <button class="form-summary__reset" type="button" aria-label="Убрать выбранный расчёт" data-t-attr="aria-label:ui.summaryReset" data-summary-reset><span data-icon="close"></span></button>
-            </div>
-            <input type="hidden" name="summary" data-summary-input>
-
-            <div class="field">
-              <label for="book-name" data-t="ui.formName">Ваше имя</label>
-              <input id="book-name" name="name" type="text" autocomplete="name" placeholder="Как к вам обращаться" data-t-attr="placeholder:ui.formNamePh" data-rule="name" required>
-            </div>
-            <div class="field">
-              <label for="book-phone" data-t="ui.formPhone">Телефон</label>
-              <input id="book-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" data-phone data-rule="phone" required>
-            </div>
-            <div class="field">
-              <label for="book-car" data-t="ui.formCar">Марка автомобиля</label>
-              <input id="book-car" name="car" type="text" autocomplete="off" placeholder="Например, Toyota Camry" data-t-attr="placeholder:ui.formCarPhAlt" data-rule="car" required>
-            </div>
-            <div class="field">
-              <label for="book-service" data-t="ui.formService">Услуга</label>
-              <select id="book-service" name="service" data-service-select data-rule="service" required>
-                <option value="" data-t="ui.formServicePick">Выберите услугу</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="book-date" data-t="ui.formDate">Удобная дата</label>
-              <input id="book-date" name="date" type="date" data-date-min>
-            </div>
-            <div class="field field--full">
-              <label for="book-comment" data-t="ui.formComment">Комментарий</label>
-              <textarea id="book-comment" name="comment" rows="3" placeholder="Что важно учесть" data-t-attr="placeholder:ui.formCommentPh"></textarea>
-            </div>
-            <div class="field--full">
-              <button class="btn btn--primary btn--lg btn--block" type="submit" data-t="booking.submit">Записаться</button>
-              <p class="form__note" data-t="lead.note">Перезвоним в течение 15 минут в рабочее время. Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
-            </div>
-          </form>
+          <article class="package" data-reveal>
+            <h3 data-t="sv.p3.name">После отказа</h3>
+            <p class="package__desc" data-t="sv.p3.desc">Для тех, кто уже получил отказ и хочет подать снова&nbsp;— без прежних ошибок.</p>
+            <p class="package__price">[ЦЕНА]</p>
+            <p class="package__term"><svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-t="sv.p3.term">Срок подготовки: [ЗАПОЛНИТЬ]</span></p>
+            <ul class="package__list">
+              <li><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span data-t="sv.p3.i1">Разбор письма об отказе и указанных причин</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span data-t="sv.p3.i2">Оценка того, что можно исправить</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span data-t="sv.p3.i3">Новый пакет документов и анкета</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span data-t="sv.p3.i4">Помощь с записью на повторную подачу</span></li>
+            </ul>
+            <a class="btn btn--ghost btn--block" href="https://t.me/Djimbo9" target="_blank" rel="noopener"><span data-t="ui.discussTelegram">Обсудить в Telegram</span><span class="sr-only" data-t="sv.p3.sr">&nbsp;— пакет «После отказа»</span></a>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- ===== 6. Гарантии и сертификаты ===== -->
-    <section class="section section--tint" id="guarantees" aria-labelledby="guarantees-title">
-      <div class="container">
+    <!-- ===== Таблица сравнения ===== -->
+    <section class="section section--tint" id="compare" aria-labelledby="compare-title">
+      <div class="container container--narrow">
         <header class="section__head" data-reveal>
-          <p class="eyebrow" data-t="guarantees.eyebrow">Гарантии и сертификаты</p>
-          <h2 id="guarantees-title" data-t="guarantees.title">Обещания, закреплённые на бумаге</h2>
+          <p class="eyebrow" data-t="sv.compare.eyebrow">Сравнение</p>
+          <h2 id="compare-title" data-t="sv.compare.title">Чем отличаются пакеты</h2>
         </header>
-        <div class="features" data-render="guarantees"></div>
+        <!-- Роли сохраняют семантику таблицы: на телефоне строки перестраиваются через CSS grid -->
+        <table class="compare" role="table" data-reveal>
+          <caption class="sr-only" data-t="sv.compare.caption">Сравнение пакетов «Консультация», «Под ключ» и «После отказа»</caption>
+          <thead role="rowgroup">
+            <tr role="row">
+              <th role="columnheader" scope="col" class="compare__corner" data-t="sv.compare.corner">Что входит</th>
+              <th role="columnheader" scope="col" data-t="sv.p1.name">Консультация</th>
+              <th role="columnheader" scope="col" class="is-popular" data-t="sv.p2.name">Под ключ</th>
+              <th role="columnheader" scope="col" data-t="sv.p3.name">После отказа</th>
+            </tr>
+          </thead>
+          <tbody role="rowgroup">
+            <tr role="row">
+              <th role="rowheader" scope="row" data-t="sv.compare.r1">Формат</th>
+              <td role="cell" data-t="sv.compare.r1c1">Встреча или созвон</td>
+              <td role="cell" class="is-popular" data-t="sv.compare.r1c2">Подготовка к подаче</td>
+              <td role="cell" data-t="sv.compare.r1c3">Разбор отказа и повторная подача</td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row" data-t="sv.compare.r2">Страна подачи и тип визы</th>
+              <td role="cell"><span class="yes"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span class="sr-only" data-t="ui.yes">Да</span></span></td>
+              <td role="cell" class="is-popular"><span class="yes"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span class="sr-only" data-t="ui.yes">Да</span></span></td>
+              <td role="cell"><span class="no"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 12h10"/></svg><span class="sr-only" data-t="ui.no">Нет</span></span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row" data-t="sv.compare.r3">Список документов</th>
+              <td role="cell"><span class="yes"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span class="sr-only" data-t="ui.yes">Да</span></span></td>
+              <td role="cell" class="is-popular"><span class="yes"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span class="sr-only" data-t="ui.yes">Да</span></span></td>
+              <td role="cell"><span class="yes"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span class="sr-only" data-t="ui.yes">Да</span></span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row" data-t="sv.compare.r4">Проверка документов</th>
+              <td role="cell"><span class="no"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 12h10"/></svg><span class="sr-only" data-t="ui.no">Нет</span></span></td>
+              <td role="cell" class="is-popular"><span class="yes"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span class="sr-only" data-t="ui.yes">Да</span></span></td>
+              <td role="cell"><span class="yes"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span class="sr-only" data-t="ui.yes">Да</span></span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row" data-t="sv.compare.r5">Заполнение анкеты</th>
+              <td role="cell"><span class="no"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 12h10"/></svg><span class="sr-only" data-t="ui.no">Нет</span></span></td>
+              <td role="cell" class="is-popular"><span class="yes"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span class="sr-only" data-t="ui.yes">Да</span></span></td>
+              <td role="cell"><span class="yes"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span class="sr-only" data-t="ui.yes">Да</span></span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row" data-t="sv.compare.r6">Помощь с записью</th>
+              <td role="cell"><span class="no"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 12h10"/></svg><span class="sr-only" data-t="ui.no">Нет</span></span></td>
+              <td role="cell" class="is-popular"><span class="yes"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span class="sr-only" data-t="ui.yes">Да</span></span></td>
+              <td role="cell"><span class="yes"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span class="sr-only" data-t="ui.yes">Да</span></span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row" data-t="sv.compare.r10">Подготовка к подаче и собеседованию</th>
+              <td role="cell"><span class="no"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 12h10"/></svg><span class="sr-only" data-t="ui.no">Нет</span></span></td>
+              <td role="cell" class="is-popular"><span class="yes"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span class="sr-only" data-t="ui.yes">Да</span></span></td>
+              <td role="cell"><span class="no"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 12h10"/></svg><span class="sr-only" data-t="ui.no">Нет</span></span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row" data-t="sv.compare.r7">Бронирования и страховка</th>
+              <td role="cell"><span class="no"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 12h10"/></svg><span class="sr-only" data-t="ui.no">Нет</span></span></td>
+              <td role="cell" class="is-popular">[ЗАПОЛНИТЬ]</td>
+              <td role="cell">[ЗАПОЛНИТЬ]</td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row" data-t="sv.compare.r8">Разбор отказа</th>
+              <td role="cell"><span class="no"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 12h10"/></svg><span class="sr-only" data-t="ui.no">Нет</span></span></td>
+              <td role="cell" class="is-popular"><span class="no"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 12h10"/></svg><span class="sr-only" data-t="ui.no">Нет</span></span></td>
+              <td role="cell"><span class="yes"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span class="sr-only" data-t="ui.yes">Да</span></span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row" data-t="sv.compare.r9">Стоимость</th>
+              <td role="cell">[ЦЕНА]</td>
+              <td role="cell" class="is-popular">[ЦЕНА]</td>
+              <td role="cell">[ЦЕНА]</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
-    <!-- ===== 7. Финальный призыв ===== -->
-    <section class="section">
+    <!-- ===== Все услуги подробно ===== -->
+    <section class="section" id="all-services" aria-labelledby="all-services-title">
       <div class="container">
-        <div class="final-cta gradient-border" data-reveal>
-          <h2 data-t="finalCta.title">Не уверены, что выбрать?</h2>
-          <p class="section__lead" data-t="finalCta.lead">Приезжайте на бесплатную диагностику: осмотрим автомобиль и подскажем, какие работы действительно нужны.</p>
-          <div class="final-cta__actions">
-            <a class="btn btn--primary btn--lg" href="#booking" data-t="finalCta.button">Записаться на диагностику</a>
-            <a class="btn btn--ghost btn--lg" href="#calc" data-t="hero.ctaSecondary">Рассчитать стоимость</a>
+        <header class="section__head" data-reveal>
+          <p class="eyebrow" data-t="sv.list.eyebrow">Все услуги</p>
+          <h2 id="all-services-title" data-t="sv.list.title">Что входит в каждую услугу</h2>
+          <p class="section__lead" data-t="sv.list.lead">Любую услугу можно заказать отдельно или в составе пакета.</p>
+        </header>
+
+        <div class="svc-list">
+          <article class="svc-item" id="consult" data-reveal>
+            <span class="card__icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 4 3 6.5V20l6-2.5 6 2.5 6-2.5V4l-6 2.5z"/><path d="M9 4v13.5M15 6.5V20"/></svg></span>
+            <h3 data-t="svc.consult.name">Консультация по визе</h3>
+            <p data-t="sv.consult.for">Для тех, кто планирует поездку и хочет понять, с чего начать.</p>
+            <p class="svc-item__label" data-t="ui.included">Что входит</p>
+            <ul>
+              <li data-t="sv.consult.i1">Разбор цели поездки и маршрута</li>
+              <li data-t="sv.consult.i2">Определение консульства и типа визы</li>
+              <li data-t="sv.consult.i3">Оценка риска отказа в вашей ситуации</li>
+              <li data-t="sv.consult.i4">Список документов под ваш случай</li>
+            </ul>
+            <p class="svc-item__label" data-t="ui.result">Результат</p>
+            <p class="svc-item__result" data-t="sv.consult.result">Понятный план: куда подавать, что собрать и в какие сроки.</p>
+          </article>
+
+          <article class="svc-item" id="documents" data-reveal>
+            <span class="card__icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5M9 14.5l2 2 4-4"/></svg></span>
+            <h3 data-t="svc.documents.name">Подготовка и проверка документов</h3>
+            <p data-t="sv.documents.for">Для тех, кто хочет с первого раза подать полный и аккуратный пакет документов.</p>
+            <p class="svc-item__label" data-t="ui.included">Что входит</p>
+            <ul>
+              <li data-t="sv.documents.i1">Проверка паспорта, фото и справок на соответствие требованиям</li>
+              <li data-t="sv.documents.i2">Что должно быть в справке с работы, банковской выписке и спонсорском письме</li>
+              <li data-t="sv.documents.i3">Переводы документов: [ЗАПОЛНИТЬ: делаете сами или через партнёров]</li>
+              <li data-t="sv.documents.i4">Финальная проверка всех документов перед подачей</li>
+            </ul>
+            <p class="svc-item__label" data-t="ui.result">Результат</p>
+            <p class="svc-item__result" data-t="sv.documents.result">Пакет документов, собранный по требованиям консульства, в которое вы подаёте.</p>
+          </article>
+
+          <article class="svc-item" id="application" data-reveal>
+            <span class="card__icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4M8.5 14.5l2 2 4-4"/></svg></span>
+            <h3 data-t="svc.application.name">Анкета и запись на подачу</h3>
+            <p data-t="sv.application.for">Чтобы не ошибиться в анкете и правильно записаться на подачу.</p>
+            <p class="svc-item__label" data-t="ui.included">Что входит</p>
+            <ul>
+              <li data-t="sv.application.i1">Заполнение визовой анкеты</li>
+              <li data-t="sv.application.i2">Помощь с записью через официальную систему визового центра или консульства</li>
+              <li data-t="sv.application.i3">Объяснение, как проходит подача и сдача отпечатков пальцев</li>
+              <li data-t="sv.application.i4">Список того, что взять с собой</li>
+            </ul>
+            <p class="svc-item__label" data-t="ui.result">Результат</p>
+            <p class="svc-item__result" data-t="sv.application.result">Заполненная анкета и назначенная дата подачи.</p>
+          </article>
+
+          <article class="svc-item" id="booking" data-reveal>
+            <span class="card__icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="7.5" width="17" height="12.5" rx="2"/><path d="M9 7.5v-2A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5v2M8 7.5V20M16 7.5V20"/></svg></span>
+            <h3 data-t="svc.booking.name">Бронирования и страховка</h3>
+            <p data-t="sv.booking.for">Для подтверждения маршрута и проживания при подаче.</p>
+            <p class="svc-item__label" data-t="ui.included">Что входит</p>
+            <ul>
+              <li data-t="sv.booking.i1">Бронирование проживания на даты поездки</li>
+              <li data-t="sv.booking.i2">Бронирование билетов или подтверждение маршрута</li>
+              <li data-t="sv.booking.i3">Медицинская страховка на весь срок поездки, действующая во всех странах Шенгена, с покрытием не менее 30&nbsp;000&nbsp;евро&nbsp;— обязательное требование</li>
+              <li data-t="sv.booking.i4">Сверка дат во всех документах</li>
+            </ul>
+            <p class="svc-item__label" data-t="ui.result">Результат</p>
+            <p class="svc-item__result" data-t="sv.booking.result">Бронирования и страховка, которые подходят для подачи.</p>
+          </article>
+
+          <article class="svc-item" id="interview" data-reveal>
+            <span class="card__icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5h11v8H8.5L4 16.5z"/><path d="M15 9h5v8.5L16.5 15H10v-2"/></svg></span>
+            <h3 data-t="svc.interview.name">Подготовка к подаче и собеседованию</h3>
+            <p data-t="sv.interview.for">Для тех, кто волнуется перед визитом в визовый центр или консульство.</p>
+            <p class="svc-item__label" data-t="ui.included">Что входит</p>
+            <ul>
+              <li data-t="sv.interview.i1">Что обычно спрашивают при подаче и на собеседовании, если консульство его назначит</li>
+              <li data-t="sv.interview.i2">Как коротко и честно объяснить цель поездки</li>
+              <li data-t="sv.interview.i3">Сверка ваших ответов с документами</li>
+              <li data-t="sv.interview.i4">Что делать, если запросили дополнительные документы</li>
+            </ul>
+            <p class="svc-item__label" data-t="ui.result">Результат</p>
+            <p class="svc-item__result" data-t="sv.interview.result">Вы знаете, что вас ждёт, и идёте на подачу спокойно.</p>
+          </article>
+
+          <article class="svc-item" id="refusal" data-reveal>
+            <span class="card__icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12a8 8 0 1 0 2.4-5.7"/><path d="M4 4.5V9h4.5"/></svg></span>
+            <h3 data-t="svc.refusal.name">Помощь после отказа</h3>
+            <p data-t="sv.refusal.for">Для тех, кто уже получил отказ и хочет понять, что делать дальше.</p>
+            <p class="svc-item__label" data-t="ui.included">Что входит</p>
+            <ul>
+              <li data-t="sv.refusal.i1">Разбор письма об отказе и указанных причин</li>
+              <li data-t="sv.refusal.i2">Оценка того, что можно исправить</li>
+              <li data-t="sv.refusal.i3">Подготовка повторной подачи</li>
+              <li data-t="sv.refusal.i4">Обжалование отказа: [ЗАПОЛНИТЬ: оказываете ли эту услугу]</li>
+            </ul>
+            <p class="svc-item__label" data-t="ui.result">Результат</p>
+            <p class="svc-item__result" data-t="sv.refusal.result">Понимание причин отказа и план: подавать повторно или обжаловать.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Связаться ===== -->
+    <section class="section contact" id="contacts" aria-labelledby="contacts-title">
+      <div class="container contact__grid">
+        <div data-reveal>
+          <p class="eyebrow" data-t="contact.eyebrow">Связаться</p>
+          <h2 id="contacts-title" data-t="contact.sv.title">Не знаете, какой пакет <em>выбрать?</em></h2>
+          <p class="section__lead" data-t="contact.sv.lead">Напишите в Telegram или позвоните&nbsp;— подскажем, что подойдёт именно для вашей поездки.</p>
+          <p class="contact__note" data-t="contact.note">Условия первой консультации: [ЗАПОЛНИТЬ: бесплатно или стоимость, длительность, формат].</p>
+          <div class="contact__actions">
+            <a class="btn btn--primary btn--lg" href="https://t.me/Djimbo9" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 4.5 3.5 11.2c-.8.3-.8 1.3 0 1.5l4.3 1.3 1.7 5.1c.2.6 1 .8 1.5.3l2.4-2.3 4.4 3.2c.6.4 1.4.1 1.5-.6L22 5.4c.1-.7-.5-1.2-1-.9z"/><path d="m8 14 9.5-6.5-6.5 7.5"/></svg><span data-t="ui.telegram">Написать в Telegram</span></a>
+            <a class="btn btn--ghost btn--lg" href="tel:+998915256856"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 3.5h4l1.6 5-2.3 1.8a12 12 0 0 0 5.4 5.4l1.8-2.3 5 1.6v4a1.5 1.5 0 0 1-1.6 1.5C10.5 19.8 4.2 13.5 3.5 5.1A1.5 1.5 0 0 1 5 3.5z"/></svg><span data-t="ui.call">Позвонить</span></a>
           </div>
+        </div>
+
+        <div class="contact-card" data-reveal>
+          <h3 data-t="ui.contacts">Контакты</h3>
+          <address class="contact-list">
+            <div class="contact-list__row">
+              <svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 3.5h4l1.6 5-2.3 1.8a12 12 0 0 0 5.4 5.4l1.8-2.3 5 1.6v4a1.5 1.5 0 0 1-1.6 1.5C10.5 19.8 4.2 13.5 3.5 5.1A1.5 1.5 0 0 1 5 3.5z"/></svg>
+              <div><span class="contact-list__label" data-t="ui.phone">Телефон</span><a class="contact-list__value" href="tel:+998915256856" translate="no">+998&nbsp;91&nbsp;525&nbsp;68&nbsp;56</a></div>
+            </div>
+            <div class="contact-list__row">
+              <svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 4.5 3.5 11.2c-.8.3-.8 1.3 0 1.5l4.3 1.3 1.7 5.1c.2.6 1 .8 1.5.3l2.4-2.3 4.4 3.2c.6.4 1.4.1 1.5-.6L22 5.4c.1-.7-.5-1.2-1-.9z"/><path d="m8 14 9.5-6.5-6.5 7.5"/></svg>
+              <div><span class="contact-list__label">Telegram</span><a class="contact-list__value" href="https://t.me/Djimbo9" translate="no" target="_blank" rel="noopener">@Djimbo9</a></div>
+            </div>
+          </address>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ===== Футер ===== -->
+  <!-- ===== Футер (одинаковый на обеих страницах) ===== -->
   <footer class="footer">
     <div class="container footer__grid">
       <div class="footer__brand">
-        <a class="logo" href="index.html" aria-label="NOIR Detail — на главную" data-t-attr="aria-label:ui.logoLabel">NOIR<span class="logo__dot" aria-hidden="true"></span><span class="logo__sub">Detail</span></a>
-        <p data-t="footer.tagline">Премиум-детейлинг и керамика для автомобилей, за которыми хочется ухаживать.</p>
+        <a class="logo" href="index.html" translate="no" aria-label="Сириус&nbsp;— на главную" data-t-attr="aria-label:ui.logoLabel">
+          <img class="logo__mark logo__mark--on-light" src="img/logo/sirius-mark-light.svg" alt="" width="44" height="44" loading="lazy">
+          <img class="logo__mark logo__mark--on-dark" src="img/logo/sirius-mark-dark.svg" alt="" width="44" height="44" loading="lazy">
+          <span class="logo__text"><span class="logo__name">CIRIUS</span><span class="logo__sub">CONSULTING</span></span>
+        </a>
+        <p data-t="footer.tagline">Визовый консалтинг в Ташкенте: помощь с шенгенской визой&nbsp;— от консультации до подачи документов.</p>
       </div>
       <div>
-        <h2 class="footer__title" data-t="ui.footerContacts">Контакты</h2>
+        <h2 class="footer__title" data-t="ui.contacts">Контакты</h2>
         <address class="footer__list">
-          <span data-t="contacts.address">Ташкент, Яшнабадский район, ул. Шёлковая, 17</span>
-          <a data-href="telegram" href="#" target="_blank" rel="noopener" data-t="ui.footerTelegram">Написать в Telegram</a>
+          <a href="tel:+998915256856" translate="no">+998&nbsp;91&nbsp;525&nbsp;68&nbsp;56</a>
+          <a href="https://t.me/Djimbo9" target="_blank" rel="noopener">Telegram</a>
         </address>
       </div>
-      <div>
-        <h2 class="footer__title" data-t="ui.footerHours">Часы работы</h2>
-        <p class="footer__list" data-t="contacts.hours">Ежедневно, 9:00–21:00</p>
-      </div>
       <nav aria-label="Навигация в футере" data-t-attr="aria-label:ui.navFooter">
-        <h2 class="footer__title" data-t="ui.footerSections">Разделы</h2>
+        <h2 class="footer__title" data-t="ui.sections">Разделы</h2>
         <div class="footer__list">
           <a href="index.html" data-t="ui.navHome">Главная</a>
-          <a href="services.html" data-t="ui.navServices">Услуги и расчёт</a>
-          <a href="#booking" data-t="ui.book">Записаться</a>
+          <a href="services.html" data-t="ui.navServices">Услуги и цены</a>
+          <a href="#contacts" data-t="ui.contacts">Контакты</a>
         </div>
       </nav>
-      <div>
-        <h2 class="footer__title" data-t="ui.footerSocials">Соцсети</h2>
-        <div class="socials" data-render="socials"></div>
-      </div>
     </div>
     <div class="container footer__bottom">
-      <p>© <span data-year>2026</span> NOIR Detail. <span data-t="ui.rights">Все права защищены.</span></p>
+      <p>© <span data-year>2026</span> <span data-t="footer.copy">Сириус (Cirius Consulting). Все права защищены.</span></p>
     </div>
   </footer>
 
-  <noscript>
-    <p class="noscript">Для калькулятора и записи онлайн включите JavaScript. Please enable JavaScript to use the calculator and booking form.</p>
-  </noscript>
+  <!-- Кнопка чата: ведёт в Telegram -->
+  <a class="fab" href="https://t.me/Djimbo9" target="_blank" rel="noopener" aria-label="Написать в Telegram" data-t-attr="aria-label:ui.telegram" data-fab><svg class="icon" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 4.5 3.5 11.2c-.8.3-.8 1.3 0 1.5l4.3 1.3 1.7 5.1c.2.6 1 .8 1.5.3l2.4-2.3 4.4 3.2c.6.4 1.4.1 1.5-.6L22 5.4c.1-.7-.5-1.2-1-.9z"/><path d="m8 14 9.5-6.5-6.5 7.5"/></svg></a>
 
+  <!-- Нижняя панель на телефоне -->
+  <div class="mobile-bar">
+    <a class="btn btn--ghost" href="tel:+998915256856"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 3.5h4l1.6 5-2.3 1.8a12 12 0 0 0 5.4 5.4l1.8-2.3 5 1.6v4a1.5 1.5 0 0 1-1.6 1.5C10.5 19.8 4.2 13.5 3.5 5.1A1.5 1.5 0 0 1 5 3.5z"/></svg><span data-t="ui.call">Позвонить</span></a>
+    <a class="btn btn--primary" href="https://t.me/Djimbo9" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 4.5 3.5 11.2c-.8.3-.8 1.3 0 1.5l4.3 1.3 1.7 5.1c.2.6 1 .8 1.5.3l2.4-2.3 4.4 3.2c.6.4 1.4.1 1.5-.6L22 5.4c.1-.7-.5-1.2-1-.9z"/><path d="m8 14 9.5-6.5-6.5 7.5"/></svg>Telegram</a>
+  </div>
+
+  <script src="js/i18n-en.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
 </html>

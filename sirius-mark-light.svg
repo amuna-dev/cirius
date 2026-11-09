@@ -1,0 +1,46 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch",
+      "Bash(curl *)",
+      "Bash(mkdir *)",
+      "Bash(ls *)",
+      "Bash(python -m http.server *)",
+      "Bash(python3 -m http.server *)",
+      "Bash(git status *)",
+      "Bash(git diff *)",
+      "Bash(git log *)"
+    ],
+    "ask": [
+      "Bash(rm *)",
+      "Bash(git checkout *)",
+      "Bash(git restore *)",
+      "Bash(git stash *)",
+      "Bash(npm install *)",
+      "Bash(npx *)"
+    ],
+    "deny": [
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(git merge *)",
+      "Bash(git rebase *)",
+      "Bash(git reset *)",
+      "Bash(git tag *)",
+      "Bash(git remote *)",
+      "Bash(git branch *)",
+      "Bash(gh *)",
+      "Bash(netlify *)",
+      "Bash(npx netlify *)",
+      "Bash(npx netlify-cli *)",
+      "Bash(vercel *)",
+      "Bash(npx vercel *)",
+      "Bash(wrangler *)",
+      "Bash(npx wrangler *)",
+      "Bash(firebase *)",
+      "Bash(npx gh-pages *)",
+      "Bash(npm publish *)",
+      "Bash(rm -rf *)"
+    ]
+  }
+}
