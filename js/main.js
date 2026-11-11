@@ -5,8 +5,9 @@
    на русском, сайт полностью читается без JS. Здесь только поведение:
    1. Английская версия: подстановка текстов из js/i18n-en.js
    2. Переключатели языка и темы
-   3. Шапка, мобильное меню, параллакс первого экрана
+   3. Шапка, мобильное меню, нижняя панель на телефоне
    4. Появление блоков при прокрутке
+   5. Возврат кнопкой «Назад»
    ========================================================================= */
 'use strict';
 
@@ -97,6 +98,7 @@ function initTheme() {
     });
   });
   sync();
+  return sync;
 }
 
 /* После смены языка возвращает к тому же месту: длина текстов разная, поэтому храним долю высоты */
@@ -110,7 +112,7 @@ function restoreScroll() {
 
 
 /* =========================================================================
-   3. Шапка, меню, параллакс
+   3. Шапка, меню, нижняя панель
    ========================================================================= */
 
 function initHeader() {
@@ -120,7 +122,7 @@ function initHeader() {
   if (!header || !burger || !nav) return;
 
   // Пока меню открыто, страница под ним недоступна для Tab и экранных дикторов
-  const behind = ['main', 'footer', '.fab', '.mobile-bar'].map((selector) => $(selector)).filter(Boolean);
+  const behind = ['main', 'footer', '.quick-contact'].map((selector) => $(selector)).filter(Boolean);
   const setMenu = (open) => {
     document.documentElement.classList.toggle('menu-open', open);
     behind.forEach((el) => el.toggleAttribute('inert', open));
@@ -136,26 +138,37 @@ function initHeader() {
       burger.focus();
     }
   });
-  matchMedia('(min-width: 900px)').addEventListener('change', () => setMenu(false));
+  // addListener — для Safari старше 14, где у MediaQueryList нет addEventListener
+  const wide = matchMedia('(min-width: 900px)');
+  const closeMenu = () => setMenu(false);
+  if (wide.addEventListener) wide.addEventListener('change', closeMenu);
+  else wide.addListener(closeMenu);
 
-  // Шапка, кнопка чата и параллакс используют один обработчик прокрутки
-  const parallax = $('[data-parallax]');
-  const useParallax = parallax && !reducedMotion();
-  const fab = $('.hero') && $('[data-fab]');          // на первом экране телефона кнопка чата закрывала бы призыв
+  // Подложка шапки появляется при прокрутке
   let ticking = false;
   const onFrame = () => {
-    const y = window.scrollY;
-    header.classList.toggle('is-scrolled', y > 16);
-    fab?.classList.toggle('is-tucked', y < window.innerHeight * 0.5);
-    if (useParallax && y < window.innerHeight * 1.2) {
-      parallax.style.transform = `translate3d(0, ${y * 0.14}px, 0)`;
-    }
+    header.classList.toggle('is-scrolled', window.scrollY > 16);
     ticking = false;
   };
   window.addEventListener('scroll', () => {
     if (!ticking) { ticking = true; requestAnimationFrame(onFrame); }
   }, { passive: true });
   onFrame();
+}
+
+/* Нижняя панель на телефоне. На главной она выезжает, когда кнопки первого экрана уже
+   прокручены вверх: иначе панель закрывала бы их. Пока класса is-shown нет, CSS прячет панель */
+function initMobileBar() {
+  const bar = $('.mobile-bar');
+  if (!bar) return;
+  const actions = $('.hero__actions');
+  if (!actions || !('IntersectionObserver' in window)) {
+    bar.classList.add('is-shown');
+    return;
+  }
+  new IntersectionObserver(([entry]) => {
+    bar.classList.toggle('is-shown', !entry.isIntersecting && entry.boundingClientRect.top < 0);
+  }).observe(actions);
 }
 
 
@@ -183,6 +196,30 @@ function initReveal() {
 
 
 /* =========================================================================
+   5. Возврат кнопкой «Назад»
+   ========================================================================= */
+
+/* Браузер может показать страницу из кэша, а тему или язык за это время сменили
+   на другой странице. Подтягиваем сохранённый выбор */
+function initPageshow(syncTheme) {
+  window.addEventListener('pageshow', (event) => {
+    if (!event.persisted) return;
+    const savedLang = storage.get(LANG_KEY) === 'en' ? 'en' : 'ru';
+    if (savedLang !== LANG) {
+      const url = new URL(location.href);
+      url.searchParams.set('lang', savedLang);
+      location.replace(url);
+      return;
+    }
+    const root = document.documentElement;
+    if (storage.get(THEME_KEY) === 'dark') root.setAttribute('data-theme', 'dark');
+    else root.removeAttribute('data-theme');
+    syncTheme();
+  });
+}
+
+
+/* =========================================================================
    Запуск
    ========================================================================= */
 
@@ -192,7 +229,9 @@ document.documentElement.classList.remove('i18n-pending');
 $$('[data-year]').forEach((el) => { el.textContent = String(new Date().getFullYear()); });
 
 initLangSwitch();
-initTheme();
+const syncTheme = initTheme();
 initHeader();
+initMobileBar();
 initReveal();
 restoreScroll();
+initPageshow(syncTheme);

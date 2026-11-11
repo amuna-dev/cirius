@@ -10,9 +10,8 @@
 
 | Файл | Где используется | Автор | Источник | Лицензия |
 |---|---|---|---|---|
-| hero-travel.webp | Не используется (была на первом экране до 09.11.2026): Эйфелева башня в Париже, светлое небо слева под текстом | Jad Limcaco | https://unsplash.com/photos/eiffel-tower-paris-NT1mJPgni6A | Unsplash License |
 | tasks-passport.webp | Блок «Узнаёте свою ситуацию?»: паспорт, блокнот и ноутбук на светлом столе | Barbara Maier | https://unsplash.com/photos/books-camera-lens-and-drone-on-wooden-surface-kXbb59ueA0g | Unsplash License |
-| service-consult.webp | Услуга «Консультация»: планирование поездки по карте, рука с ручкой | Vlada Karpovich | https://www.pexels.com/photo/a-person-holding-a-pen-7368308/ | Pexels License |
+| service-consult.webp, service-consult-1600.webp | Услуга «Консультация»: планирование поездки по карте, рука с ручкой (правая часть кадра, без паспорта и буклета) | Vlada Karpovich | https://www.pexels.com/photo/a-person-holding-a-pen-7368308/ | Pexels License |
 | service-documents.webp | Услуга «Документы»: планшет-клипборд с анкетой (Application), ручка, ноутбук | Markus Winkler | https://www.pexels.com/photo/an-application-paper-on-a-clipboard-beside-pen-and-laptop-4101416/ | Pexels License |
 | service-booking.webp | Услуга «Бронирования и страховка»: два белых чемодана в светлой комнате | Vlada Karpovich | https://www.pexels.com/photo/suitcases-beside-a-sofa-7368309/ | Pexels License |
 | service-interview.webp | Услуга «Подготовка к подаче / собеседованию»: разговор за светлым столом с анкетой, лица не видны | Kampus Production | https://www.pexels.com/photo/documents-on-the-table-8441777/ | Pexels License |

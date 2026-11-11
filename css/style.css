@@ -11,6 +11,7 @@
    4. Hero                      9. Страница услуг
    5. Логотип                  10. Футер, кнопка чата, нижняя панель
                                11. Анимации и prefers-reduced-motion
+                               12. Печать
    ========================================================================= */
 
 /* ---------- 1. Шрифты, токены и база ---------- */
@@ -24,6 +25,13 @@
 @font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 400; font-display: swap; src: url('../fonts/montserrat-latin-400.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 @font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 500; font-display: swap; src: url('../fonts/montserrat-latin-500.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 @font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 600; font-display: swap; src: url('../fonts/montserrat-latin-600.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+/* Запасной шрифт на время загрузки Montserrat: Arial, подогнанный под ширину каждого начертания,
+   чтобы текст не перескакивал на другую строку, когда Montserrat загрузится */
+@font-face { font-family: 'Montserrat Fallback'; font-weight: 300; src: local('Arial'), local('ArialMT'), local('Helvetica'); size-adjust: 112.69%; ascent-override: 85.90%; descent-override: 22.27%; line-gap-override: 0%; }
+@font-face { font-family: 'Montserrat Fallback'; font-weight: 400; src: local('Arial'), local('ArialMT'), local('Helvetica'); size-adjust: 113.98%; ascent-override: 84.93%; descent-override: 22.02%; line-gap-override: 0%; }
+@font-face { font-family: 'Montserrat Fallback'; font-weight: 500; src: local('Arial'), local('ArialMT'), local('Helvetica'); size-adjust: 115.53%; ascent-override: 83.79%; descent-override: 21.73%; line-gap-override: 0%; }
+@font-face { font-family: 'Montserrat Fallback'; font-weight: 600 700; src: local('Arial Bold'), local('Arial-BoldMT'), local('Helvetica Bold'); size-adjust: 108.63%; ascent-override: 89.11%; descent-override: 23.11%; line-gap-override: 0%; }
 
 :root {
   /* Светлая тема (по умолчанию). Цвета — только через эти переменные */
@@ -43,9 +51,10 @@
   --gold-rgb: 127 97 42;
   --shadow: 0 6px 20px rgb(28 30 33 / 0.18);
   --card-shadow: 0 1px 2px rgb(28 30 33 / 0.04), 0 10px 28px -12px rgb(28 30 33 / 0.12);   /* лёгкая глубина карточек на светлом фоне */
+  --hero-shadow: 0 0 0 1px var(--line), 0 30px 70px -30px rgb(28 30 33 / 0.4);   /* тень картинки первого экрана */
   --photo-dim: 1;                  /* яркость фото */
 
-  --font: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  --font: 'Montserrat', 'Montserrat Fallback', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
 
   --radius: 16px;
   --radius-sm: 10px;
@@ -82,6 +91,7 @@
   --gold-rgb: 201 164 92;
   --shadow: 0 6px 20px rgb(0 0 0 / 0.45);
   --card-shadow: none;
+  --hero-shadow: 0 0 0 1px var(--line), 0 30px 70px -30px rgb(0 0 0 / 0.6);
   --photo-dim: 0.9;               /* светлые фото чуть приглушены, чтобы не слепили на тёмном */
 
   color-scheme: dark;
@@ -326,6 +336,7 @@ html:not(.js) .burger { display: none; }
   border-radius: 999px;
 }
 .lang__btn {
+  position: relative;
   min-width: 36px;
   min-height: 32px;
   padding: 4px 8px;
@@ -337,12 +348,14 @@ html:not(.js) .burger { display: none; }
   transition: color 0.2s, background-color 0.2s;
 }
 .lang__btn:hover { color: var(--text); }
+.lang__btn::after { content: ""; position: absolute; inset: -6px 0; }   /* зона нажатия 44px по высоте, вид тот же */
 .lang__btn[aria-pressed="true"] { background: rgb(var(--gold-rgb) / 0.14); color: var(--gold-hover); }
 [data-theme="dark"] .lang__btn[aria-pressed="true"] { color: var(--gold); }
 html:not(.js) .lang { display: none; }   /* английская версия работает только с JS */
 
 /* Переключатель темы: луна в светлой теме, солнце в тёмной */
 .theme-toggle {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -355,6 +368,7 @@ html:not(.js) .lang { display: none; }   /* английская версия р
   transition: border-color 0.2s, color 0.2s;
 }
 .theme-toggle:hover { border-color: var(--gold); color: var(--gold-hover); }
+.theme-toggle::after { content: ""; position: absolute; inset: -4px; border-radius: 50%; }   /* зона нажатия 44–48px */
 .theme-toggle__sun, [data-theme="dark"] .theme-toggle__moon { display: none; }
 [data-theme="dark"] .theme-toggle__sun { display: block; }
 html:not(.js) .theme-toggle { display: none; }   /* без JS тема не переключается */
@@ -407,7 +421,7 @@ html:not(.js) .theme-toggle { display: none; }   /* без JS тема не пе
   margin: 0 auto;
   aspect-ratio: 3 / 2;
   border-radius: clamp(16px, 1.6vw, 28px);
-  box-shadow: 0 0 0 1px var(--line), 0 30px 70px -30px rgb(28 30 33 / 0.4);
+  box-shadow: var(--hero-shadow);
 }
 .hero__visual img { object-fit: cover; }
 .hero__content {
@@ -418,7 +432,7 @@ html:not(.js) .theme-toggle { display: none; }   /* без JS тема не пе
 }
 .hero .eyebrow { justify-content: center; }
 .hero .eyebrow::after { content: ""; flex: none; width: 18px; height: 1px; background: currentColor; }
-.hero__title { max-width: 22ch; }
+.hero__title { max-width: 14.5em; }   /* em, а не ch: ch зависит от загрузки шрифта, и заголовок перескакивал на другую строку */
 .hero__lead {
   max-width: 36rem;
   margin-top: 20px;
@@ -439,6 +453,7 @@ html:not(.js) .theme-toggle { display: none; }   /* без JS тема не пе
   display: inline-flex;
   align-items: center;
   gap: 12px;
+  min-height: 44px;                      /* зона нажатия не меньше 44px */
   margin-right: auto;
   line-height: 1;
 }
@@ -584,6 +599,7 @@ html:not(.js) .theme-toggle { display: none; }   /* без JS тема не пе
   transition: transform 0.4s var(--ease);
 }
 .timeline.is-visible::after, html:not(.js) .timeline::after { transform: none; }
+.reveal-fallback .timeline::after { transform: none; }   /* main.js не загрузился — линия видна сразу */
 .step { position: relative; }
 .step__num {
   position: absolute;
@@ -656,11 +672,13 @@ html:not(.js) .theme-toggle { display: none; }   /* без JS тема не пе
 .faq__item[open] .faq__q .icon { transform: rotate(180deg); }
 .faq__a { padding: 0 20px 20px; color: var(--muted); }
 .faq__a p + p { margin-top: 10px; }
+.faq__a p { max-width: 46em; }              /* на широком экране строка не длиннее ~70 знаков */
 .faq__a a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
 .faq__a a:hover { color: var(--gold-hover); }
 
 /* ---------- 8. Связаться и контакты ---------- */
 .contact { border-top: 1px solid var(--line); }
+.section--tint + .contact { border-top: 0; }   /* у цветной секции выше уже есть нижняя линия */
 .contact__grid { display: grid; gap: 32px; }
 .contact__note {
   margin-top: 20px;
@@ -690,9 +708,8 @@ html:not(.js) .theme-toggle { display: none; }   /* без JS тема не пе
 .contact-list__row .icon { margin-top: 2px; color: var(--gold); }
 .contact-list__label { display: block; font-size: 0.8125rem; color: var(--muted); }
 .contact-list__value { display: block; overflow-wrap: anywhere; }
-.contact-list a.contact-list__value { padding-block: 6px; margin-block: -6px; transition: color 0.2s; }   /* зона нажатия ~38px, вёрстка не сдвигается */
+.contact-list a.contact-list__value { padding-block: 10px; margin-block: -10px; transition: color 0.2s; }   /* зона нажатия ~46px, вёрстка не сдвигается */
 .contact-list a.contact-list__value:hover { color: var(--gold-hover); }
-.contact-list .btn { margin-top: 10px; }
 
 /* ---------- 9. Страница услуг ---------- */
 .page-hero {
@@ -705,7 +722,7 @@ html:not(.js) .theme-toggle { display: none; }   /* без JS тема не пе
 .chip {
   display: inline-flex;
   align-items: center;
-  min-height: 40px;
+  min-height: 44px;
   padding: 8px 16px;
   border: 1px solid var(--line-strong);
   border-radius: 999px;
@@ -779,7 +796,7 @@ html:not(.js) .theme-toggle { display: none; }   /* без JS тема не пе
   padding: 14px 0;
   border-bottom: 1px solid var(--line);
 }
-.compare th, .compare td { display: block; padding: 0; text-align: center; font-weight: 400; font-size: 0.875rem; }
+.compare th, .compare td { display: block; padding: 0; text-align: center; font-weight: 400; font-size: 0.875rem; overflow-wrap: anywhere; }   /* длинное слово переносится, а не выпирает из узкой колонки */
 .compare thead {
   position: sticky;
   top: var(--header-offset);
@@ -791,7 +808,15 @@ html:not(.js) .theme-toggle { display: none; }   /* без JS тема не пе
   border-bottom: 1px solid var(--line-strong);
 }
 .compare thead th { font-weight: 500; font-size: 0.75rem; letter-spacing: -0.01em; }   /* длинные названия пакетов должны влезть в треть ширины телефона */
-.compare__corner { display: none !important; }
+.compare__corner {                       /* на телефоне не видна, но экранный диктор её читает — столбцы не сдвигаются */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
 .compare tbody th {
   grid-column: 1 / -1;
   color: var(--muted);
@@ -853,7 +878,7 @@ html:not(.js) .theme-toggle { display: none; }   /* без JS тема не пе
   color: var(--gold);
 }
 .footer__list { display: grid; justify-items: start; gap: 0; color: var(--muted); }
-.footer__list a { display: inline-flex; align-items: center; min-height: 40px; transition: color 0.2s; }
+.footer__list a { display: inline-flex; align-items: center; min-height: 44px; transition: color 0.2s; }
 .footer__list a:hover { color: var(--gold-hover); }
 .footer__bottom {
   margin-top: 40px;
@@ -863,25 +888,24 @@ html:not(.js) .theme-toggle { display: none; }   /* без JS тема не пе
   font-size: 0.8125rem;
 }
 
-/* Кнопка чата: ведёт в Telegram. На телефоне стоит выше нижней панели */
+/* Кнопка чата: ведёт в Telegram. Только с 720px: на телефоне её заменяет нижняя панель */
 .fab {
   position: fixed;
-  right: 16px;
-  bottom: calc(var(--mobile-bar-h) + 14px + env(safe-area-inset-bottom, 0px));
+  right: 24px;
+  bottom: calc(24px + env(safe-area-inset-bottom, 0px));
   z-index: 80;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
-  width: 52px;
-  height: 52px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background: var(--btn);
   color: var(--on-gold);
   box-shadow: var(--shadow);
-  transition: background-color var(--dur), opacity 0.25s, transform 0.25s var(--ease), visibility 0.25s;
+  transition: background-color var(--dur);
 }
 .fab:hover { background: var(--btn-hover); }
-.fab.is-tucked { visibility: hidden; opacity: 0; transform: scale(0.85); }
 
 .mobile-bar {
   position: fixed;
@@ -895,8 +919,12 @@ html:not(.js) .theme-toggle { display: none; }   /* без JS тема не пе
   background: rgb(var(--bg-rgb) / 0.94);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
+  transition: transform 0.3s var(--ease), visibility 0.3s;
 }
 .mobile-bar .btn { padding-inline: 12px; gap: 8px; }
+/* На главной панель выезжает, когда кнопки первого экрана уже прокручены вверх: иначе она
+   закрывала бы их. Класс is-shown ставит main.js; без JS (и если он не загрузился) панель видна всегда */
+.js:not(.reveal-fallback) [data-page="home"] .mobile-bar:not(.is-shown) { transform: translateY(100%); visibility: hidden; }
 
 /* ---------- Большие экраны ---------- */
 @media (min-width: 560px) {
@@ -916,10 +944,12 @@ html:not(.js) .theme-toggle { display: none; }   /* без JS тема не пе
   :root { --header-compact: calc(var(--header-h) - 12px); }
   body { padding-bottom: 0; }
   .mobile-bar { display: none; }
-  .fab, .fab.is-tucked { right: 24px; bottom: 24px; visibility: visible; opacity: 1; transform: none; }
-  .fab { width: 56px; height: 56px; }
+  .fab { display: flex; }
 
   .header.is-scrolled .header__inner { height: var(--header-compact); }
+  /* Меню на планшете: шапка с открытым меню той же высоты, что и при прокрутке, панель — сразу под ней */
+  .menu-open .header__inner { height: var(--header-compact); }
+  .nav { top: calc(var(--header-compact) + env(safe-area-inset-top, 0px)); }
 
   .bento { grid-template-columns: repeat(6, 1fr); grid-auto-rows: minmax(15rem, auto); }
   .card { min-height: 0; grid-column: span 3; }
@@ -938,7 +968,7 @@ html:not(.js) .theme-toggle { display: none; }   /* без JS тема не пе
   .compare tbody { display: table-row-group; }
   .compare tr { display: table-row; padding: 0; }
   .compare th, .compare td { display: table-cell; padding: 16px 12px; vertical-align: middle; border-bottom: 1px solid var(--line); font-size: 0.9375rem; }
-  .compare thead .compare__corner { display: table-cell !important; text-align: left; color: var(--muted); font-weight: 400; }
+  .compare thead .compare__corner { position: sticky; width: auto; height: auto; margin: 0; overflow: visible; clip-path: none; white-space: normal; display: table-cell; text-align: left; color: var(--muted); font-weight: 400; }
   .compare thead th { font-size: 0.9375rem; letter-spacing: 0; }
   .compare thead { position: static; background: none; }
   .compare thead th { position: sticky; top: var(--header-offset); background: var(--bg-tint); border-bottom-color: var(--line-strong); box-shadow: inset 0 -1px var(--line-strong); }
@@ -960,7 +990,8 @@ html:not(.js) .theme-toggle { display: none; }   /* без JS тема не пе
   .section__head:has(> .section__lead) > .eyebrow,
   .section__head:has(> .section__lead) > h2 { grid-column: 1; }
   .section__head:has(> .section__lead) > .section__lead { grid-column: 2; grid-row: 1 / span 2; margin-top: 0; max-width: 34rem; }
-  .container--narrow .section__head { display: block; max-width: 44rem; }
+  .container--narrow .section__head:has(> .section__lead) { display: block; }   /* в узком контейнере заголовок раздела в одну колонку */
+  .container--narrow .section__head:has(> .section__lead) > .section__lead { margin-top: 16px; }
   .section__head:not(:has(> .section__lead)) { max-width: 56rem; }   /* короткий заголовок — в одну строку */
 
   /* Меню в шапке: бургер не нужен */
@@ -1012,6 +1043,7 @@ html:not(.js) .theme-toggle { display: none; }   /* без JS тема не пе
   .card--lg h3 { font-size: 1.75rem; font-weight: 400; }
   .card--lg p { max-width: 30rem; font-size: 1rem; }
   .card:hover { border-color: rgb(var(--gold-rgb) / 0.55); transform: translateY(-3px); }
+  .js .card[data-reveal].is-visible:hover { transform: translateY(-3px); }   /* иначе подъём перебивает правило появления */
   .card:hover > .media img { transform: scale(1.04); }
   .card:hover .card__link .icon { transform: translateX(4px); }
 
@@ -1077,7 +1109,44 @@ html:not(.js) .theme-toggle { display: none; }   /* без JS тема не пе
     transition-duration: 0.01ms !important;
     transition-delay: 0ms !important;
   }
-  .js [data-reveal] { opacity: 1; transform: none; }
+  .js:not(.reveal-fallback) [data-reveal], .js [data-reveal] { opacity: 1; transform: none; }
+  .js .timeline::after { transform: none; }
+}
+
+/* ---------- 12. Печать ---------- */
+/* Всегда светлые цвета, все блоки видны, кнопки и панели не печатаются */
+@media print {
+  :root, :root[data-theme="dark"] {
+    --bg: #FFFFFF;
+    --bg-tint: #FFFFFF;
+    --surface: #FFFFFF;
+    --line: #E4DDD0;
+    --line-strong: #BDB2A0;
+    --gold: #7F612A;
+    --gold-hover: #5E4720;
+    --btn: #C9A45C;
+    --btn-hover: #B8924A;
+    --on-gold: #111315;
+    --text: #1C1E21;
+    --muted: #5A554D;
+    --bg-rgb: 255 255 255;
+    --gold-rgb: 127 97 42;
+    --card-shadow: none;
+    --hero-shadow: none;
+    --photo-dim: 1;
+    color-scheme: light;
+  }
+  body { padding-bottom: 0; }
+  .header { position: static; height: auto; margin-bottom: 0; }
+  .header::before, .burger, .lang, .theme-toggle, .nav, .skip-link, .quick-contact, .chips { display: none !important; }
+  .hero, .page-hero { padding-top: 16px; }
+  .section { padding-block: 28px; }
+  [data-reveal] { opacity: 1 !important; transform: none !important; }
+  .timeline::after { transform: none !important; }
+  .compare thead, .compare thead th { position: static; }
+  .card, .task, .feature, .step, .faq__item, .package, .svc-item, .contact-card { break-inside: avoid; }
+  /* Ответы FAQ печатаются, даже если вопрос свёрнут (где браузер это поддерживает) */
+  .faq__item::details-content { content-visibility: visible; }
 }
 
 /* Значок хостинга Netlify закрывал кнопки в нижней панели */

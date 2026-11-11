@@ -7,13 +7,13 @@
 window.SIRIUS_EN = {
   /* --- Мета-теги --- */
   'meta.home.title': 'Visa consulting in Tashkent: Schengen visa help | Cirius',
-  'meta.home.description': 'Schengen visa help in Tashkent: the right country and visa type, checking documents, filling in the form, booking an appointment, help after a refusal.',
+  'meta.home.description': 'Visa consulting in Tashkent: help with your Schengen visa — the country and visa type, document checks, the application form, appointments and refusals.',
   'meta.services.title': 'Visa consulting prices in Tashkent: Schengen visa | Cirius',
   'meta.services.description': 'Prices for Schengen visa help in Tashkent: consultation, full document preparation and help after a refusal. Cirius visa consulting.',
 
   /* --- Общие элементы --- */
   'ui.skip': 'Skip to content',
-  'ui.logoLabel': 'Cirius — home page',
+  'ui.logoLabel': 'Cirius Consulting — home page',
   'ui.navMain': 'Main navigation',
   'ui.navFooter': 'Footer navigation',
   'ui.navHome': 'Home',
@@ -29,6 +29,7 @@ window.SIRIUS_EN = {
   'ui.telegram': 'Message us on Telegram',
   'ui.discussTelegram': 'Discuss on Telegram',
   'ui.call': 'Call',
+  'ui.quickContact': 'Quick contact',
   'ui.phone': 'Phone',
   'ui.chipsNav': 'Page sections',
   'ui.included': 'What’s included',
@@ -160,6 +161,7 @@ window.SIRIUS_EN = {
 
   'sv.p1.name': 'Consultation',
   'sv.p1.desc': 'A conversation about your trip: where to apply, which visa you need and what to prepare.',
+  'sv.p1.price': '[ЦЕНА]',
   'sv.p1.term': 'One meeting or call',
   'sv.p1.i1': 'Reviewing the purpose of your trip and your situation',
   'sv.p1.i2': 'Working out the country to apply to and the visa type',
@@ -170,6 +172,7 @@ window.SIRIUS_EN = {
   'sv.p2.badge': 'Recommended',
   'sv.p2.name': 'Full service',
   'sv.p2.desc': 'We get your documents ready for submission: from the consultation to booking your appointment.',
+  'sv.p2.price': '[ЦЕНА]',
   'sv.p2.term': 'Preparation time: [ЗАПОЛНИТЬ]',
   'sv.p2.i1': 'Visa consultation',
   'sv.p2.i2': 'Document list and a full check',
@@ -180,6 +183,7 @@ window.SIRIUS_EN = {
 
   'sv.p3.name': 'After a refusal',
   'sv.p3.desc': 'If you’ve been refused and want to reapply — without repeating the same mistakes.',
+  'sv.p3.price': '[ЦЕНА]',
   'sv.p3.term': 'Preparation time: [ЗАПОЛНИТЬ]',
   'sv.p3.i1': 'Reviewing the refusal letter and the reasons given',
   'sv.p3.i2': 'Working out what can be fixed',
@@ -202,8 +206,13 @@ window.SIRIUS_EN = {
   'sv.compare.r6': 'Help with booking',
   'sv.compare.r10': 'Preparing for the appointment and interview',
   'sv.compare.r7': 'Bookings and insurance',
+  'sv.compare.r7c2': '[ЗАПОЛНИТЬ]',
+  'sv.compare.r7c3': '[ЗАПОЛНИТЬ]',
   'sv.compare.r8': 'Refusal review',
   'sv.compare.r9': 'Price',
+  'sv.compare.r9c1': '[ЦЕНА]',
+  'sv.compare.r9c2': '[ЦЕНА]',
+  'sv.compare.r9c3': '[ЦЕНА]',
 
   'sv.list.eyebrow': 'All services',
   'sv.list.title': 'What each service includes',
