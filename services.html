@@ -55,6 +55,7 @@
 
       <div class="lang" role="group" aria-label="Выбор языка" data-t-attr="aria-label:ui.langLabel">
         <button class="lang__btn" type="button" lang="ru" aria-label="RU — Русский" data-lang="ru">RU</button>
+        <button class="lang__btn" type="button" lang="uz" aria-label="UZ — Oʻzbekcha" data-lang="uz">UZ</button>
         <button class="lang__btn" type="button" lang="en" aria-label="EN — English" data-lang="en">EN</button>
       </div>
 
@@ -72,11 +73,12 @@
       <div class="container">
         <p class="eyebrow" data-t="sv.hero.eyebrow">Шенгенские визы · услуги и цены</p>
         <h1 id="page-title" data-t="sv.hero.title">Помощь с визой: форматы и <em>стоимость</em></h1>
-        <p class="section__lead" data-t="sv.hero.lead">Разовая консультация, подготовка под ключ или помощь после отказа. Точную стоимость называем после разговора о вашей поездке и фиксируем в договоре.</p>
+        <p class="section__lead" data-t="sv.hero.lead">Разовая консультация, подготовка под ключ или помощь после отказа. Точную стоимость называем после разговора о вашей поездке.</p>
         <nav class="chips" aria-label="Разделы страницы" data-t-attr="aria-label:ui.chipsNav">
           <a class="chip" href="#packages" data-t="sv.chips.packages">Пакеты</a>
           <a class="chip" href="#compare" data-t="sv.chips.compare">Сравнение</a>
           <a class="chip" href="#all-services" data-t="sv.chips.list">Все услуги</a>
+          <a class="chip" href="#docs" data-t="sv.chips.docs">Документы</a>
           <a class="chip" href="#contacts" data-t="ui.contacts">Контакты</a>
         </nav>
       </div>
@@ -95,9 +97,9 @@
           <article class="package" data-reveal>
             <h3 data-t="sv.p1.name">Консультация</h3>
             <p class="package__desc" data-t="sv.p1.desc">Разговор о вашей поездке: куда подавать, какая виза нужна и что подготовить.</p>
-            <p class="package__price" data-t="sv.p1.price">[ЦЕНА]</p>
-            <p class="package__term"><svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-t="sv.p1.term">Одна встреча или созвон</span></p>
+            <p class="package__price" data-t="sv.p1.price">Договорная</p>
             <ul class="package__list">
+              <li><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span data-t="sv.p1.term">Одна встреча или созвон</span></li>
               <li><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span data-t="sv.p1.i1">Разбор цели поездки и вашей ситуации</span></li>
               <li><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span data-t="sv.p1.i2">Определение страны подачи и типа визы</span></li>
               <li><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span data-t="sv.p1.i3">Список документов под ваш случай</span></li>
@@ -110,14 +112,14 @@
             <span class="package__badge" data-t="sv.p2.badge">Рекомендуем</span>
             <h3 data-t="sv.p2.name">Под ключ</h3>
             <p class="package__desc" data-t="sv.p2.desc">Готовим документы к подаче: от консультации до записи на подачу.</p>
-            <p class="package__price" data-t="sv.p2.price">[ЦЕНА]</p>
-            <p class="package__term"><svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-t="sv.p2.term">Срок подготовки: [ЗАПОЛНИТЬ]</span></p>
+            <p class="package__price" data-t="sv.p2.price">Договорная</p>
             <ul class="package__list">
               <li><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span data-t="sv.p2.i1">Консультация по визе</span></li>
               <li><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span data-t="sv.p2.i2">Список документов и их проверка</span></li>
               <li><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span data-t="sv.p2.i3">Заполнение визовой анкеты</span></li>
               <li><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span data-t="sv.p2.i4">Помощь с записью на подачу</span></li>
               <li><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span data-t="sv.p2.i5">Подготовка к подаче и собеседованию</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span data-t="sv.p2.i6">Бронирования и медицинская страховка</span></li>
             </ul>
             <a class="btn btn--primary btn--block" href="https://t.me/Djimbo9" target="_blank" rel="noopener"><span data-t="ui.discussTelegram">Обсудить в Telegram</span><span class="sr-only" data-t="sv.p2.sr">&nbsp;— пакет «Под ключ»</span></a>
           </article>
@@ -125,13 +127,13 @@
           <article class="package" data-reveal>
             <h3 data-t="sv.p3.name">После отказа</h3>
             <p class="package__desc" data-t="sv.p3.desc">Для тех, кто уже получил отказ и хочет подать снова&nbsp;— без прежних ошибок.</p>
-            <p class="package__price" data-t="sv.p3.price">[ЦЕНА]</p>
-            <p class="package__term"><svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-t="sv.p3.term">Срок подготовки: [ЗАПОЛНИТЬ]</span></p>
+            <p class="package__price" data-t="sv.p3.price">Договорная</p>
             <ul class="package__list">
               <li><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span data-t="sv.p3.i1">Разбор письма об отказе и указанных причин</span></li>
               <li><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span data-t="sv.p3.i2">Оценка того, что можно исправить</span></li>
               <li><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span data-t="sv.p3.i3">Новый пакет документов и анкета</span></li>
               <li><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span data-t="sv.p3.i4">Помощь с записью на повторную подачу</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span data-t="sv.p3.i5">Бронирования и медицинская страховка</span></li>
             </ul>
             <a class="btn btn--ghost btn--block" href="https://t.me/Djimbo9" target="_blank" rel="noopener"><span data-t="ui.discussTelegram">Обсудить в Telegram</span><span class="sr-only" data-t="sv.p3.sr">&nbsp;— пакет «После отказа»</span></a>
           </article>
@@ -203,8 +205,8 @@
             <tr role="row">
               <th role="rowheader" scope="row" data-t="sv.compare.r7">Бронирования и страховка</th>
               <td role="cell"><span class="no"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 12h10"/></svg><span class="sr-only" data-t="ui.no">Нет</span></span></td>
-              <td role="cell" class="is-popular" data-t="sv.compare.r7c2">[ЗАПОЛНИТЬ]</td>
-              <td role="cell" data-t="sv.compare.r7c3">[ЗАПОЛНИТЬ]</td>
+              <td role="cell" class="is-popular"><span class="yes"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span class="sr-only" data-t="ui.yes">Да</span></span></td>
+              <td role="cell"><span class="yes"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span class="sr-only" data-t="ui.yes">Да</span></span></td>
             </tr>
             <tr role="row">
               <th role="rowheader" scope="row" data-t="sv.compare.r8">Разбор отказа</th>
@@ -214,9 +216,9 @@
             </tr>
             <tr role="row">
               <th role="rowheader" scope="row" data-t="sv.compare.r9">Стоимость</th>
-              <td role="cell" data-t="sv.compare.r9c1">[ЦЕНА]</td>
-              <td role="cell" class="is-popular" data-t="sv.compare.r9c2">[ЦЕНА]</td>
-              <td role="cell" data-t="sv.compare.r9c3">[ЦЕНА]</td>
+              <td role="cell" data-t="sv.compare.r9c1">Договорная</td>
+              <td role="cell" class="is-popular" data-t="sv.compare.r9c2">Договорная</td>
+              <td role="cell" data-t="sv.compare.r9c3">Договорная</td>
             </tr>
           </tbody>
         </table>
@@ -256,7 +258,6 @@
             <ul>
               <li data-t="sv.documents.i1">Проверка паспорта, фото и справок на соответствие требованиям</li>
               <li data-t="sv.documents.i2">Что должно быть в справке с работы, банковской выписке и спонсорском письме</li>
-              <li data-t="sv.documents.i3">Переводы документов: [ЗАПОЛНИТЬ: делаете сами или через партнёров]</li>
               <li data-t="sv.documents.i4">Финальная проверка всех документов перед подачей</li>
             </ul>
             <p class="svc-item__label" data-t="ui.result">Результат</p>
@@ -317,12 +318,137 @@
               <li data-t="sv.refusal.i1">Разбор письма об отказе и указанных причин</li>
               <li data-t="sv.refusal.i2">Оценка того, что можно исправить</li>
               <li data-t="sv.refusal.i3">Подготовка повторной подачи</li>
-              <li data-t="sv.refusal.i4">Обжалование отказа: [ЗАПОЛНИТЬ: оказываете ли эту услугу]</li>
             </ul>
             <p class="svc-item__label" data-t="ui.result">Результат</p>
-            <p class="svc-item__result" data-t="sv.refusal.result">Понимание причин отказа и план: подавать повторно или обжаловать.</p>
+            <p class="svc-item__result" data-t="sv.refusal.result">Понимание причин отказа и план повторной подачи.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <!-- ===== Документы для шенгенской визы ===== -->
+    <!-- Источники: Визовый кодекс ЕС и единый перечень документов для заявителей в Узбекистане (C(2014) 6141) -->
+    <section class="section section--tint" id="docs" aria-labelledby="docs-title">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow" data-t="sv.docs.eyebrow">Документы</p>
+          <h2 id="docs-title" data-t="sv.docs.title">Какие документы нужны для шенгенской визы</h2>
+          <p class="section__lead" data-t="sv.docs.lead">Общий список для заявителей из Узбекистана&nbsp;— по Визовому кодексу ЕС и единому перечню документов консульств стран Шенгена в Узбекистане. Точный набор зависит от страны и вашей ситуации: его мы составим на консультации.</p>
+        </header>
+
+        <article class="svc-item docs-base" data-reveal>
+          <h3 data-t="sv.docs.base.title">Для всех заявителей</h3>
+          <ul>
+            <li data-t="sv.docs.base.i1">Визовая анкета&nbsp;— заполненная и подписанная</li>
+            <li data-t="sv.docs.base.i2">Загранпаспорт: выдан не более 10&nbsp;лет назад, действует ещё минимум 3&nbsp;месяца после поездки, есть 2&nbsp;чистые страницы</li>
+            <li data-t="sv.docs.base.i3">Копии заполненных страниц загранпаспорта</li>
+            <li data-t="sv.docs.base.i4">Фото 3,5&nbsp;×&nbsp;4,5&nbsp;см на светлом фоне, сделанное недавно</li>
+            <li data-t="sv.docs.base.i5">Медицинская страховка на весь срок поездки: действует во всех странах Шенгена, покрытие не менее 30&nbsp;000&nbsp;евро</li>
+            <li data-t="sv.docs.base.i6">Бронь билетов туда и обратно</li>
+            <li data-t="sv.docs.base.i7">Подтверждение жилья на весь срок поездки</li>
+            <li data-t="sv.docs.base.i8">Выписка с банковского счёта за последние 3&nbsp;месяца, международная банковская карта и последняя выписка по ней</li>
+            <li data-t="sv.docs.base.i9">Документ, подтверждающий, что вы проживаете в Узбекистане</li>
+            <li data-t="sv.docs.base.i10">Документы о семье в Узбекистане: свидетельство о браке, свидетельства о рождении детей, паспорта супруга и детей</li>
+          </ul>
+        </article>
+
+        <h3 class="docs-group" data-t="sv.docs.status.title">Дополнительно&nbsp;— по вашей ситуации</h3>
+        <div class="svc-list">
+          <article class="svc-item" data-reveal>
+            <h4 data-t="sv.docs.s1.title">Работаете по найму</h4>
+            <ul>
+              <li data-t="sv.docs.s1.i1">Справка с работы с указанием должности</li>
+              <li data-t="sv.docs.s1.i2">Справка о зарплате за последние 12&nbsp;месяцев</li>
+              <li data-t="sv.docs.s1.i3">Трудовая книжка</li>
+              <li data-t="sv.docs.s1.i4">Подтверждение отпуска на даты поездки</li>
+            </ul>
+          </article>
+          <article class="svc-item" data-reveal>
+            <h4 data-t="sv.docs.s2.title">Своё дело или ИП</h4>
+            <ul>
+              <li data-t="sv.docs.s2.i1">Копия свидетельства о регистрации или лицензии</li>
+              <li data-t="sv.docs.s2.i2">Справка об уплате налогов</li>
+            </ul>
+          </article>
+          <article class="svc-item" data-reveal>
+            <h4 data-t="sv.docs.s3.title">Учитесь</h4>
+            <ul>
+              <li data-t="sv.docs.s3.i1">Справка с места учёбы</li>
+              <li data-t="sv.docs.s3.i2">Разрешение учебного заведения на поездку, если она выпадает на учебное время</li>
+            </ul>
+          </article>
+          <article class="svc-item" data-reveal>
+            <h4 data-t="sv.docs.s4.title">На пенсии</h4>
+            <ul>
+              <li data-t="sv.docs.s4.i1">Пенсионное удостоверение</li>
+            </ul>
+          </article>
+          <article class="svc-item" data-reveal>
+            <h4 data-t="sv.docs.s5.title">Поездку оплачивает другой человек</h4>
+            <ul>
+              <li data-t="sv.docs.s5.i1">Спонсорское письмо в форме, которую принимает консульство</li>
+              <li data-t="sv.docs.s5.i2">Другие подтверждения средств: денежные переводы, договор аренды недвижимости, стипендия или грант</li>
+            </ul>
+          </article>
+          <article class="svc-item" data-reveal>
+            <h4 data-t="sv.docs.s6.title">Едут дети до 18&nbsp;лет</h4>
+            <ul>
+              <li data-t="sv.docs.s6.i1">Свидетельство о рождении</li>
+              <li data-t="sv.docs.s6.i2">Копии паспортов родителей</li>
+              <li data-t="sv.docs.s6.i3">Нотариальное согласие родителя или опекуна, если ребёнок едет один или с одним из родителей</li>
+            </ul>
+          </article>
+        </div>
+
+        <h3 class="docs-group" data-t="sv.docs.purpose.title">Дополнительно&nbsp;— по цели поездки</h3>
+        <div class="svc-list">
+          <article class="svc-item" data-reveal>
+            <h4 data-t="sv.docs.p1.title">Туризм</h4>
+            <ul>
+              <li data-t="sv.docs.p1.i1">Оплаченная бронь отеля или другого жилья либо оплаченный тур</li>
+            </ul>
+          </article>
+          <article class="svc-item" data-reveal>
+            <h4 data-t="sv.docs.p2.title">В гости к родственникам или друзьям</h4>
+            <ul>
+              <li data-t="sv.docs.p2.i1">Приглашение от принимающей стороны&nbsp;— в некоторых странах официальная форма, заверенная местным ведомством</li>
+              <li data-t="sv.docs.p2.i2">Копия паспорта приглашающего и его вида на жительство, если он не гражданин ЕС</li>
+              <li data-t="sv.docs.p2.i3">Документ о родстве, если едете к родственникам</li>
+            </ul>
+          </article>
+          <article class="svc-item" data-reveal>
+            <h4 data-t="sv.docs.p3.title">Деловая поездка</h4>
+            <ul>
+              <li data-t="sv.docs.p3.i1">Приглашение от компании с указанием, кто оплачивает поездку, или билеты на выставку либо конференцию</li>
+              <li data-t="sv.docs.p3.i2">Выписка из реестра или лицензия приглашающей компании</li>
+              <li data-t="sv.docs.p3.i3">Бронь отеля или подтверждение, что жильё оплачивает приглашающая сторона</li>
+            </ul>
+          </article>
+          <article class="svc-item" data-reveal>
+            <h4 data-t="sv.docs.p4.title">Учёба, культура, спорт</h4>
+            <ul>
+              <li data-t="sv.docs.p4.i1">Приглашение организатора или письмо о зачислении&nbsp;— с датами и подтверждением финансирования</li>
+              <li data-t="sv.docs.p4.i2">Бронь жилья на весь срок, например места в общежитии</li>
+              <li data-t="sv.docs.p4.i3">Для групповых поездок&nbsp;— согласие профильных ведомств Узбекистана</li>
+            </ul>
+          </article>
+          <article class="svc-item" data-reveal>
+            <h4 data-t="sv.docs.p5.title">Лечение</h4>
+            <ul>
+              <li data-t="sv.docs.p5.i1">Письмо клиники или врача о необходимости лечения, его стоимости и сроках</li>
+              <li data-t="sv.docs.p5.i2">Подтверждение оплаты лечения или спонсорства</li>
+              <li data-t="sv.docs.p5.i3">Бронь жилья</li>
+            </ul>
+          </article>
+          <article class="svc-item" data-reveal>
+            <h4 data-t="sv.docs.p6.title">Транзит</h4>
+            <ul>
+              <li data-t="sv.docs.p6.i1">Виза или другое разрешение на въезд в страну назначения</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="contact__note docs-note" data-reveal data-t="sv.docs.note">Консульство может запросить и другие документы. Что подавать в оригинале, а что в копии, и сколько денег должно быть на счёте&nbsp;— зависит от страны. Всё это подскажем на консультации и проверим документы перед подачей.</p>
       </div>
     </section>
 
@@ -333,7 +459,6 @@
           <p class="eyebrow" data-t="contact.eyebrow">Связаться</p>
           <h2 id="contacts-title" data-t="contact.sv.title">Не знаете, какой пакет <em>выбрать?</em></h2>
           <p class="section__lead" data-t="contact.sv.lead">Напишите в Telegram или позвоните&nbsp;— подскажем, что подойдёт именно для вашей поездки.</p>
-          <p class="contact__note" data-t="contact.note">Условия первой консультации: [ЗАПОЛНИТЬ: бесплатно или стоимость, длительность, формат].</p>
           <div class="contact__actions">
             <a class="btn btn--primary btn--lg" href="https://t.me/Djimbo9" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 4.5 3.5 11.2c-.8.3-.8 1.3 0 1.5l4.3 1.3 1.7 5.1c.2.6 1 .8 1.5.3l2.4-2.3 4.4 3.2c.6.4 1.4.1 1.5-.6L22 5.4c.1-.7-.5-1.2-1-.9z"/><path d="m8 14 9.5-6.5-6.5 7.5"/></svg><span data-t="ui.telegram">Написать в Telegram</span></a>
             <a class="btn btn--ghost btn--lg" href="tel:+998915256856"><svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 3.5h4l1.6 5-2.3 1.8a12 12 0 0 0 5.4 5.4l1.8-2.3 5 1.6v4a1.5 1.5 0 0 1-1.6 1.5C10.5 19.8 4.2 13.5 3.5 5.1A1.5 1.5 0 0 1 5 3.5z"/></svg><span data-t="ui.call">Позвонить</span></a>
@@ -396,12 +521,13 @@
 
     <!-- Нижняя панель на телефоне -->
     <div class="mobile-bar">
-      <a class="btn btn--ghost" href="tel:+998915256856"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 3.5h4l1.6 5-2.3 1.8a12 12 0 0 0 5.4 5.4l1.8-2.3 5 1.6v4a1.5 1.5 0 0 1-1.6 1.5C10.5 19.8 4.2 13.5 3.5 5.1A1.5 1.5 0 0 1 5 3.5z"/></svg><span data-t="ui.call">Позвонить</span></a>
+      <a class="btn btn--ghost" href="tel:+998915256856"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 3.5h4l1.6 5-2.3 1.8a12 12 0 0 0 5.4 5.4l1.8-2.3 5 1.6v4a1.5 1.5 0 0 1-1.6 1.5C10.5 19.8 4.2 13.5 3.5 5.1A1.5 1.5 0 0 1 5 3.5z"/></svg><span data-t="ui.callShort">Позвонить</span></a>
       <a class="btn btn--primary" href="https://t.me/Djimbo9" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 4.5 3.5 11.2c-.8.3-.8 1.3 0 1.5l4.3 1.3 1.7 5.1c.2.6 1 .8 1.5.3l2.4-2.3 4.4 3.2c.6.4 1.4.1 1.5-.6L22 5.4c.1-.7-.5-1.2-1-.9z"/><path d="m8 14 9.5-6.5-6.5 7.5"/></svg>Telegram</a>
     </div>
   </aside>
 
   <script src="js/i18n-en.js" defer></script>
+  <script src="js/i18n-uz.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
 </html>

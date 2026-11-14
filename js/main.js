@@ -3,7 +3,7 @@
 
    Сайт-визитка: никаких форм и сбора данных. Весь контент лежит в HTML
    на русском, сайт полностью читается без JS. Здесь только поведение:
-   1. Английская версия: подстановка текстов из js/i18n-en.js
+   1. Узбекская и английская версии: подстановка текстов из js/i18n-uz.js и js/i18n-en.js
    2. Переключатели языка и темы
    3. Шапка, мобильное меню, нижняя панель на телефоне
    4. Появление блоков при прокрутке
@@ -14,11 +14,13 @@
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
-const LANG = document.documentElement.lang === 'en' ? 'en' : 'ru';
+const LANGS = ['ru', 'uz', 'en'];   // русский лежит в HTML, узбекский и английский — в словарях
+const LANG = LANGS.includes(document.documentElement.lang) ? document.documentElement.lang : 'ru';
 const LANG_KEY = 'sirius_lang';
 const THEME_KEY = 'sirius_theme';
 const SCROLL_KEY = 'sirius_scroll';
-const EN = window.SIRIUS_EN || {};
+// Словарь текущего языка (для русского его нет — текст уже в HTML)
+const DICT = { uz: window.SIRIUS_UZ, en: window.SIRIUS_EN }[LANG] || null;
 
 const reducedMotion = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -29,16 +31,16 @@ const storage = {
 };
 
 /* Строки, которые скрипт ставит сам (подписи бургера) */
-const t = (key, fallback) => (LANG === 'en' && EN[key]) || fallback;
+const t = (key, fallback) => (DICT && DICT[key]) || fallback;
 
 
 /* =========================================================================
-   1. Английская версия
+   1. Перевод страницы (узбекский или английский)
    ========================================================================= */
 
-function applyEnglish() {
+function applyTranslation(dict) {
   $$('[data-t]').forEach((el) => {
-    const value = EN[el.dataset.t];
+    const value = dict[el.dataset.t];
     if (value !== undefined) el.innerHTML = value;
   });
 
@@ -46,14 +48,14 @@ function applyEnglish() {
   $$('[data-t-attr]').forEach((el) => {
     el.dataset.tAttr.split(';').forEach((pair) => {
       const [attr, key] = pair.split(':');
-      if (EN[key] !== undefined) el.setAttribute(attr, EN[key]);
+      if (dict[key] !== undefined) el.setAttribute(attr, dict[key]);
     });
   });
 
   const page = document.body.dataset.page;
-  if (EN[`meta.${page}.title`]) document.title = EN[`meta.${page}.title`];
+  if (dict[`meta.${page}.title`]) document.title = dict[`meta.${page}.title`];
   const description = $('meta[name="description"]');
-  if (description && EN[`meta.${page}.description`]) description.content = EN[`meta.${page}.description`];
+  if (description && dict[`meta.${page}.description`]) description.content = dict[`meta.${page}.description`];
 }
 
 
@@ -63,7 +65,7 @@ function applyEnglish() {
 
 function initLangSwitch() {
   const param = new URLSearchParams(location.search).get('lang');
-  if (param === 'ru' || param === 'en') storage.set(LANG_KEY, param);
+  if (LANGS.includes(param)) storage.set(LANG_KEY, param);
 
   $$('[data-lang]').forEach((button) => {
     const active = button.dataset.lang === LANG;
@@ -204,7 +206,8 @@ function initReveal() {
 function initPageshow(syncTheme) {
   window.addEventListener('pageshow', (event) => {
     if (!event.persisted) return;
-    const savedLang = storage.get(LANG_KEY) === 'en' ? 'en' : 'ru';
+    const stored = storage.get(LANG_KEY);
+    const savedLang = LANGS.includes(stored) ? stored : 'ru';
     if (savedLang !== LANG) {
       const url = new URL(location.href);
       url.searchParams.set('lang', savedLang);
@@ -223,7 +226,7 @@ function initPageshow(syncTheme) {
    Запуск
    ========================================================================= */
 
-if (LANG === 'en') applyEnglish();
+if (DICT) applyTranslation(DICT);
 document.documentElement.classList.remove('i18n-pending');
 
 $$('[data-year]').forEach((el) => { el.textContent = String(new Date().getFullYear()); });

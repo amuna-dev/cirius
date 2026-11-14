@@ -6,10 +6,12 @@
   var root = document.documentElement;
   var read = function (key) { try { return localStorage.getItem(key); } catch (e) { return null; } };
 
+  // Языки: русский (лежит в HTML), узбекский (латиница) и английский — из словарей
+  var known = function (l) { return l === 'ru' || l === 'uz' || l === 'en'; };
   var lang = null;
   try { lang = new URLSearchParams(location.search).get('lang'); } catch (e) {}
-  if (lang !== 'ru' && lang !== 'en') lang = read('sirius_lang');
-  root.lang = lang === 'en' ? 'en' : 'ru';
+  if (!known(lang)) lang = read('sirius_lang');
+  root.lang = known(lang) ? lang : 'ru';
 
   if (read('sirius_theme') === 'dark') {
     root.setAttribute('data-theme', 'dark');
@@ -22,8 +24,8 @@
   setTimeout(function () {
     if (!root.classList.contains('reveal-ready')) root.classList.add('reveal-fallback');
   }, 2500);
-  if (root.lang === 'en') {
-    // Пока main.js подставляет английский, страница скрыта
+  if (root.lang !== 'ru') {
+    // Пока main.js подставляет перевод, страница скрыта
     root.classList.add('i18n-pending');
     setTimeout(function () { root.classList.remove('i18n-pending'); }, 1500);
   }
