@@ -8,6 +8,7 @@
    3. Шапка, мобильное меню, нижняя панель на телефоне
    4. Появление блоков при прокрутке
    5. Возврат кнопкой «Назад»
+   6. Счётчик просмотров
    ========================================================================= */
 'use strict';
 
@@ -223,6 +224,40 @@ function initPageshow(syncTheme) {
 
 
 /* =========================================================================
+   6. Счётчик просмотров
+   ========================================================================= */
+
+/* Число хранит функция Netlify /api/views (netlify/functions/views.mjs).
+   Один визит = один просмотр: засчитываем первый показ страницы в сессии браузера,
+   переходы по сайту и смена языка число не увеличивают. Плашка есть только на главной;
+   если число не пришло (локально, без функции) — она остаётся скрытой */
+const VIEWS_KEY = 'sirius_viewed';
+// Разряды: по-русски и по-узбекски через неразрывный пробел (1 234 567), по-английски через запятую.
+// Свой формат, а не toLocaleString: узбекский формат знают не все браузеры
+const formatViews = (n) => String(Math.trunc(n)).replace(/\B(?=(\d{3})+(?!\d))/g, LANG === 'en' ? ',' : ' ');
+
+function initViews() {
+  const box = $('[data-views]');
+  let counted = false;
+  try { counted = sessionStorage.getItem(VIEWS_KEY) === '1'; } catch { /* без sessionStorage считаем каждый показ */ }
+  if (counted && !box) return;   // визит уже засчитан, а показывать на этой странице нечего
+
+  const method = counted ? 'GET' : 'POST';
+  fetch('/api/views', { method, cache: 'no-store', headers: { Accept: 'application/json' } })
+    .then((response) => (response.ok ? response.json() : Promise.reject(new Error(String(response.status)))))
+    .then((data) => {
+      if (method === 'POST') {
+        try { sessionStorage.setItem(VIEWS_KEY, '1'); } catch { /* */ }
+      }
+      if (!box || !Number.isFinite(data.views)) return;
+      $('[data-views-num]', box).textContent = formatViews(data.views);
+      box.hidden = false;
+    })
+    .catch(() => { /* функция недоступна — счётчик просто не показываем */ });
+}
+
+
+/* =========================================================================
    Запуск
    ========================================================================= */
 
@@ -238,3 +273,4 @@ initMobileBar();
 initReveal();
 restoreScroll();
 initPageshow(syncTheme);
+initViews();

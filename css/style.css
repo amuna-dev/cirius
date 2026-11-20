@@ -942,6 +942,28 @@ html:not(.js) .theme-toggle { display: none; }   /* без JS тема не пе
    закрывала бы их. Класс is-shown ставит main.js; без JS (и если он не загрузился) панель видна всегда */
 .js:not(.reveal-fallback) [data-page="home"] .mobile-bar:not(.is-shown) { transform: translateY(100%); visibility: hidden; }
 
+/* Счётчик просмотров (только на главной): на телефоне — под кнопками первого экрана,
+   с 720px — плашка у левого края экрана (см. блок «Большие экраны») */
+.views {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 20px;
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgb(var(--bg-rgb) / 0.92);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--card-shadow);
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.views .icon { color: var(--gold); }
+.views__num { color: var(--text); font-weight: 500; font-variant-numeric: tabular-nums; }
+
 /* ---------- Большие экраны ---------- */
 @media (min-width: 560px) {
   .eyebrow { gap: 12px; font-size: 0.75rem; letter-spacing: 0.24em; }
@@ -962,6 +984,7 @@ html:not(.js) .theme-toggle { display: none; }   /* без JS тема не пе
   body { padding-bottom: 0; }
   .mobile-bar { display: none; }
   .fab { display: flex; }
+  .views { position: fixed; left: 24px; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); z-index: 75; margin: 0; padding: 8px 14px; }
 
   .header.is-scrolled .header__inner { height: var(--header-compact); }
   /* Меню на планшете: шапка с открытым меню той же высоты, что и при прокрутке, панель — сразу под ней */
@@ -1156,7 +1179,7 @@ html:not(.js) .theme-toggle { display: none; }   /* без JS тема не пе
   }
   body { padding-bottom: 0; }
   .header { position: static; height: auto; margin-bottom: 0; }
-  .header::before, .burger, .lang, .theme-toggle, .nav, .skip-link, .quick-contact, .chips { display: none !important; }
+  .header::before, .burger, .lang, .theme-toggle, .nav, .skip-link, .quick-contact, .chips, .views { display: none !important; }
   .hero, .page-hero { padding-top: 16px; }
   .section { padding-block: 28px; }
   [data-reveal] { opacity: 1 !important; transform: none !important; }

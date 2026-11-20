@@ -5,3 +5,7 @@ PROMPT.md
 REPORT.md
 CONTENT-TODO.md
 /sirius-mark-light.svg
+
+# Ставятся и собираются на Netlify (см. netlify.toml)
+node_modules/
+dist/

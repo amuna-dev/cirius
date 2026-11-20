@@ -99,6 +99,13 @@
           <a class="btn btn--primary btn--lg" href="#contacts" data-t="ui.contact">Связаться</a>
           <a class="btn btn--ghost btn--lg" href="services.html" data-t="ui.navServices">Услуги и цены</a>
         </div>
+        <!-- Счётчик просмотров: число отдаёт функция Netlify /api/views (netlify/functions/views.mjs).
+             Пока число не пришло (локально, на Live Server) — скрыт. На телефоне под кнопками, с 720px — плашка сбоку -->
+        <p class="views" data-views hidden>
+        <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg>
+        <span data-t="ui.views">Просмотров:</span>
+        <span class="views__num" data-views-num translate="no">0</span>
+        </p>
       </div>
     </section>
 

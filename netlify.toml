@@ -1,0 +1,12 @@
+# Настройки Netlify (берутся отсюда автоматически — в интерфейсе Netlify поля сборки можно оставить пустыми).
+#
+# Сборки как таковой нет: команда только копирует файлы сайта в папку dist.
+# Так на сайт не попадают package.json, исходник функции и node_modules.
+# Зависимость из package.json Netlify ставит сам — она нужна функции счётчика просмотров.
+[build]
+  command = "mkdir -p dist && cp -R index.html services.html css js img fonts _headers robots.txt sitemap.xml site.webmanifest dist/"
+  publish = "dist"
+
+# Функция счётчика просмотров: netlify/functions/views.mjs, адрес /api/views
+[functions]
+  directory = "netlify/functions"

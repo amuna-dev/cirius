@@ -29,6 +29,7 @@ window.SIRIUS_EN = {
   'ui.discussTelegram': 'Discuss on Telegram',
   'ui.call': 'Call',
   'ui.callShort': 'Call',
+  'ui.views': 'Views:',
   'ui.quickContact': 'Quick contact',
   'ui.phone': 'Phone',
   'ui.chipsNav': 'Page sections',

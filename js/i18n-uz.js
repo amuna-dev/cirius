@@ -28,6 +28,7 @@ window.SIRIUS_UZ = {
   'ui.discussTelegram': 'Telegramda yozish',
   'ui.call': 'Qoʻngʻiroq qilish',
   'ui.callShort': 'Qoʻngʻiroq',
+  'ui.views': 'Koʻrishlar:',
   'ui.quickContact': 'Tezkor aloqa',
   'ui.phone': 'Telefon',
   'ui.chipsNav': 'Sahifa boʻlimlari',

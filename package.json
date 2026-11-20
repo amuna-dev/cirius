@@ -1,0 +1,8 @@
+{
+  "name": "cirius-site",
+  "private": true,
+  "description": "Статический сайт Cirius. Зависимость нужна только функции счётчика просмотров на Netlify (netlify/functions/views.mjs); сам сайт её не использует.",
+  "dependencies": {
+    "@netlify/blobs": "^10.7.13"
+  }
+}
