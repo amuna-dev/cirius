@@ -62,7 +62,8 @@
   --header-h: clamp(64px, 56px + 1.6vw, 84px);
   --header-compact: var(--header-h);
   --header-full: calc(var(--header-h) + env(safe-area-inset-top, 0px));
-  --header-offset: var(--header-compact);
+  --views-space: 0px;              /* место под счётчик просмотров под шапкой (с JS — см. ниже) */
+  --header-offset: calc(var(--header-compact) + var(--views-space));
   --nav-size: clamp(15px, 13px + 0.2vw, 17px);
   --mobile-bar-h: 68px;
   --gutter: clamp(16px, 4vw, 48px);
@@ -107,6 +108,7 @@ html {
   background: var(--bg);
 }
 html.menu-open { overflow: hidden; }
+html.js { --views-space: 2.75rem; }   /* плашка счётчика (~30–36px) + зазоры */
 html.i18n-pending body { visibility: hidden; }   /* пока подставляется английский текст */
 
 body {
@@ -409,14 +411,14 @@ html:not(.js) .theme-toggle { display: none; }   /* без JS тема не пе
 /* Иллюстрация — крупная карточка по центру, целиком, без затемнения и текста поверх
    (картинка насыщенная и заполнена деталями). Заголовок и кнопки — под ней */
 .hero {
-  padding-top: calc(var(--header-full) + 4px);
+  padding-top: calc(var(--header-full) + 4px + var(--views-space));
   padding-bottom: clamp(56px, 8vw, 96px);
   text-align: center;
 }
 .hero__frame { max-width: 86rem; }          /* шире обычного контейнера: картинка крупнее */
 .hero__visual {
   /* Ширина ограничена высотой экрана, чтобы под картинкой был виден заголовок */
-  width: min(100%, (100svh - var(--header-full) - 130px) * 1.5);
+  width: min(100%, (100svh - var(--header-full) - var(--views-space) - 130px) * 1.5);
   min-width: min(100%, 320px);
   margin: 0 auto;
   aspect-ratio: 3 / 2;
@@ -942,13 +944,16 @@ html:not(.js) .theme-toggle { display: none; }   /* без JS тема не пе
    закрывала бы их. Класс is-shown ставит main.js; без JS (и если он не загрузился) панель видна всегда */
 .js:not(.reveal-fallback) [data-page="home"] .mobile-bar:not(.is-shown) { transform: translateY(100%); visibility: hidden; }
 
-/* Счётчик просмотров (только на главной): на телефоне — под кнопками первого экрана,
-   с 720px — плашка у левого края экрана (см. блок «Большие экраны») */
+/* Счётчик просмотров: в шапке обеих страниц, справа под переключателями языка и темы.
+   Висит под шапкой и едет вместе с ней, поэтому виден всегда. Клики пропускает к тому, что под ним */
 .views {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: max(var(--gutter), env(safe-area-inset-right, 0px));
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-top: 20px;
+  margin: 0;
   padding: 6px 12px;
   border: 1px solid var(--line);
   border-radius: 999px;
@@ -960,6 +965,7 @@ html:not(.js) .theme-toggle { display: none; }   /* без JS тема не пе
   font-size: 0.8125rem;
   line-height: 1.2;
   white-space: nowrap;
+  pointer-events: none;
 }
 .views .icon { color: var(--gold); }
 .views__num { color: var(--text); font-weight: 500; font-variant-numeric: tabular-nums; }
@@ -984,7 +990,7 @@ html:not(.js) .theme-toggle { display: none; }   /* без JS тема не пе
   body { padding-bottom: 0; }
   .mobile-bar { display: none; }
   .fab { display: flex; }
-  .views { position: fixed; left: 24px; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); z-index: 75; margin: 0; padding: 8px 14px; }
+  .views { padding: 8px 14px; }
 
   .header.is-scrolled .header__inner { height: var(--header-compact); }
   /* Меню на планшете: шапка с открытым меню той же высоты, что и при прокрутке, панель — сразу под ней */
