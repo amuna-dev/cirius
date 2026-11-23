@@ -1,7 +1,10 @@
 {
   "name": "cirius-site",
   "private": true,
-  "description": "Статический сайт Cirius. Зависимость нужна только функции счётчика просмотров на Netlify (netlify/functions/views.mjs); сам сайт её не использует.",
+  "description": "Статический сайт Cirius Visa. npm run build копирует файлы сайта в dist (для Cloudflare Pages и Netlify). Зависимость @netlify/blobs нужна только старой функции счётчика на Netlify.",
+  "scripts": {
+    "build": "mkdir -p dist && cp -R index.html services.html css js img fonts _headers robots.txt sitemap.xml site.webmanifest dist/"
+  },
   "dependencies": {
     "@netlify/blobs": "^10.7.13"
   }

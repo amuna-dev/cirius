@@ -6,6 +6,7 @@ REPORT.md
 CONTENT-TODO.md
 /sirius-mark-light.svg
 
-# Ставятся и собираются на Netlify (см. netlify.toml)
+# Ставятся и собираются на хостинге; .wrangler — временные файлы Cloudflare
 node_modules/
 dist/
+.wrangler/

@@ -1,5 +1,5 @@
 /* =========================================================================
-   Сириус — визовый консалтинг. Стили. Подход mobile-first: базовые правила
+   Cirius Visa — визовый консалтинг. Стили. Подход mobile-first: базовые правила
    для телефона, медиазапросы добавляют раскладки для больших экранов.
    Две темы: светлая по умолчанию, тёмная — html[data-theme="dark"]
    (переключатель в шапке, выбор хранится в браузере посетителя).
@@ -730,7 +730,7 @@ html:not(.js) .theme-toggle { display: none; }   /* без JS тема не пе
 /* ---------- 9. Страница услуг ---------- */
 .page-hero {
   position: relative;
-  padding-top: calc(var(--header-full) + clamp(40px, 7vw, 80px));
+  padding-top: calc(var(--header-full) + max(clamp(40px, 7vw, 80px), var(--views-space) + 16px));   /* ниже плашки просмотров */
   padding-bottom: clamp(32px, 6vw, 56px);
 }
 .page-hero h1 { font-size: clamp(2rem, 1.2rem + 3vw, 3.5rem); }
@@ -793,12 +793,12 @@ html:not(.js) .theme-toggle { display: none; }   /* без JS тема не пе
 .package__list .icon { margin-top: 4px; color: var(--gold); }
 
 /* Таблица сравнения. На телефоне название строки занимает всю ширину,
-   значения пакетов идут под ним в три колонки: горизонтальной прокрутки нет */
+   значения пакетов идут под ним в две колонки: горизонтальной прокрутки нет */
 .compare { width: 100%; border-collapse: collapse; display: block; }
 .compare thead, .compare tbody { display: block; }
 .compare tr {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 6px 4px;
   padding: 14px 0;
   border-bottom: 1px solid var(--line);
@@ -814,7 +814,7 @@ html:not(.js) .theme-toggle { display: none; }   /* без JS тема не пе
   padding-block: 12px;
   border-bottom: 1px solid var(--line-strong);
 }
-.compare thead th { font-weight: 500; font-size: 0.75rem; letter-spacing: -0.01em; }   /* длинные названия пакетов должны влезть в треть ширины телефона */
+.compare thead th { font-weight: 500; font-size: 0.75rem; letter-spacing: -0.01em; }   /* названия пакетов должны влезть в половину ширины телефона */
 .compare__corner {                       /* на телефоне не видна, но экранный диктор её читает — столбцы не сдвигаются */
   position: absolute;
   width: 1px;
@@ -981,6 +981,7 @@ html:not(.js) .theme-toggle { display: none; }   /* без JS тема не пе
   .features { grid-template-columns: repeat(2, 1fr); }
   .features > .feature:last-child:nth-child(odd) { grid-column: 1 / -1; }   /* нечётная последняя карточка — на всю ширину */
   .tasks__list { grid-template-columns: repeat(2, 1fr); }
+  .tasks__list > .task:last-child:nth-child(odd) { grid-column: 1 / -1; }   /* нечётная последняя ситуация — на всю ширину */
   .footer__grid { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -999,7 +1000,7 @@ html:not(.js) .theme-toggle { display: none; }   /* без JS тема не пе
 
   .bento { grid-template-columns: repeat(6, 1fr); grid-auto-rows: minmax(15rem, auto); }
   .card { min-height: 0; grid-column: span 3; }
-  .card--lg, .card:last-child { grid-column: span 6; }
+  .card--lg { grid-column: span 6; }
 
   .gallery { grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(2, 13rem); gap: 14px; }
   .gallery__item { aspect-ratio: auto; height: 100%; }
@@ -1007,6 +1008,14 @@ html:not(.js) .theme-toggle { display: none; }   /* без JS тема не пе
   .gallery__item:last-child { grid-column: 3 / 5; grid-row: 2; aspect-ratio: auto; }
 
   .svc-list { grid-template-columns: repeat(2, 1fr); }
+  .svc-list--services > .svc-item:last-child:nth-child(odd) { grid-column: 1 / -1; }   /* пятая услуга — на всю ширину */
+  .packages { grid-template-columns: repeat(2, 1fr); align-items: stretch; }   /* два пакета рядом */
+  /* Строки карточек (название, описание, цена, список, кнопка) выровнены между пакетами,
+     даже если описание у одного длиннее. Без subgrid — просто карточки как раньше */
+  @supports (grid-template-rows: subgrid) {
+    .packages { grid-template-rows: repeat(5, auto); }
+    .package { display: grid; grid-row: span 5; grid-template-rows: subgrid; row-gap: 0; }
+  }
 
   /* Таблица снова обычная: четыре колонки */
   .compare { display: table; }
@@ -1081,9 +1090,10 @@ html:not(.js) .theme-toggle { display: none; }   /* без JS тема не пе
   .nav__cta { margin: 0; min-height: 44px; padding: 8px 22px; font-size: var(--nav-size); white-space: nowrap; }
 
 
-  /* Шесть услуг: большая карточка слева на две строки, остальные по сетке */
+  /* Пять услуг: большая карточка слева на две строки, две последние делят нижний ряд пополам */
   .bento { grid-auto-rows: minmax(16.5rem, auto); }   /* строка растёт, если текст не помещается */
-  .card, .card:last-child { grid-column: span 2; }
+  .card { grid-column: span 2; }
+  .card:nth-child(n+4) { grid-column: span 3; }
   .card--lg { grid-column: span 4; grid-row: span 2; }
   .card--lg .card__body { padding: 32px; }
   .card--lg h3 { font-size: 1.75rem; font-weight: 400; }
@@ -1117,8 +1127,12 @@ html:not(.js) .theme-toggle { display: none; }   /* без JS тема не пе
   .features { grid-template-columns: repeat(3, 1fr); }
   .features > .feature:last-child:nth-child(odd) { grid-column: auto; }
   .contact__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 28rem); gap: 64px; align-items: start; }
-  .packages { grid-template-columns: repeat(3, 1fr); align-items: stretch; }
   .svc-list { grid-template-columns: repeat(3, 1fr); }
+  /* Пять услуг: три сверху, две снизу пополам (сетка на 6 колонок) */
+  .svc-list--services { grid-template-columns: repeat(6, 1fr); }
+  .svc-list--services > .svc-item { grid-column: span 2; }
+  .svc-list--services > .svc-item:nth-child(n+4),
+  .svc-list--services > .svc-item:last-child:nth-child(odd) { grid-column: span 3; }
   .footer__grid { grid-template-columns: 2fr 1.2fr 1fr; gap: 40px; }
 }
 

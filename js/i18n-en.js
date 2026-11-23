@@ -5,14 +5,14 @@
    ========================================================================= */
 window.SIRIUS_EN = {
   /* --- Мета-теги --- */
-  'meta.home.title': 'Visa consulting in Tashkent: Schengen visa help | Cirius',
-  'meta.home.description': 'Visa consulting in Tashkent: help with your Schengen visa — the country and visa type, document checks, the application form, appointments and refusals.',
-  'meta.services.title': 'Visa consulting prices in Tashkent: Schengen visa | Cirius',
-  'meta.services.description': 'Prices for Schengen visa help in Tashkent: consultation, full document preparation and help after a refusal. Cirius visa consulting.',
+  'meta.home.title': 'Visa consulting in Tashkent: Schengen visa help | Cirius Visa',
+  'meta.home.description': 'Visa consulting in Tashkent: help with your Schengen visa — the country and visa type, document checks, the application form, appointments, bookings and insurance.',
+  'meta.services.title': 'Visa consulting prices in Tashkent: Schengen visa | Cirius Visa',
+  'meta.services.description': 'Prices for Schengen visa help in Tashkent: a consultation or document preparation from scratch. Visa consulting by Cirius Visa.',
 
   /* --- Общие элементы --- */
   'ui.skip': 'Skip to content',
-  'ui.logoLabel': 'Cirius Consulting — home page',
+  'ui.logoLabel': 'Cirius Visa — home page',
   'ui.navMain': 'Main navigation',
   'ui.navFooter': 'Footer navigation',
   'ui.navHome': 'Home',
@@ -40,7 +40,7 @@ window.SIRIUS_EN = {
 
 
   'footer.tagline': 'Visa consulting in Tashkent: help with your Schengen visa — from the first consultation to your appointment.',
-  'footer.copy': 'Cirius Consulting. All rights reserved.',
+  'footer.copy': 'Cirius Visa. All rights reserved.',
 
   /* --- Главная: первый экран --- */
   'home.hero.alt': 'Illustration: a happy young woman holding a passport with a Schengen visa, the EU flag, flags of the Schengen countries, the Eiffel Tower, the Colosseum and an airplane in the sky',
@@ -50,8 +50,8 @@ window.SIRIUS_EN = {
 
   /* --- Услуги (названия общие для обеих страниц) --- */
   'home.services.eyebrow': 'Services',
-  'home.services.title': 'How we help with your visa',
-  'home.services.lead': 'Come for a one-off consultation or let us handle the whole preparation. We agree on what is included and the price in advance.',
+  'home.services.title': 'How we help',
+  'home.services.lead': 'Come for a consultation or let us handle the whole preparation.',
   'home.services.consult.alt': 'A hand holding a pen over a world map while planning a trip',
   'home.services.documents.alt': 'An application form on a clipboard with a pen and a laptop on a light desk',
   'home.services.booking.alt': 'Two white suitcases in a bright living room',
@@ -67,8 +67,6 @@ window.SIRIUS_EN = {
   'svc.booking.short': 'We help you arrange proof of accommodation and travel, and get medical insurance that meets Schengen visa requirements.',
   'svc.interview.name': 'Preparing for your appointment and interview',
   'svc.interview.short': 'We explain how the appointment works, what you may be asked and how to describe the purpose of your trip calmly and honestly.',
-  'svc.refusal.name': 'Help after a refusal',
-  'svc.refusal.short': 'We go through the refusal letter and the reasons given, tell you what to fix and prepare a new application.',
 
   /* --- Главная: задачи --- */
   'home.tasks.eyebrow': 'Typical requests',
@@ -77,8 +75,6 @@ window.SIRIUS_EN = {
   'home.tasks.alt': 'A passport, notebook and laptop on a light wooden table',
   'home.tasks.t1.title': 'Your first Schengen visa',
   'home.tasks.t1.text': 'You don’t know where to start, which documents you need or which consulate to apply to.',
-  'home.tasks.t2.title': 'Refused before',
-  'home.tasks.t2.text': 'It’s unclear what went wrong, and you’re afraid to apply again with the same mistake.',
   'home.tasks.t3.title': 'No time to figure it out',
   'home.tasks.t3.text': 'Between work and family, you still need to gather paperwork, fill in the form and find an appointment slot.',
   'home.tasks.t4.title': 'A business trip',
@@ -101,7 +97,7 @@ window.SIRIUS_EN = {
   'home.process.s4.text': 'As a rule, you submit your documents in person at the visa centre or consulate, and we stay in touch until the decision.',
 
   /* --- Главная: почему мы --- */
-  'home.why.eyebrow': 'Why Cirius',
+  'home.why.eyebrow': 'Why Cirius Visa',
   'home.why.title': 'The principles behind our work',
   'home.why.f1.title': 'Honest about your chances',
   'home.why.f1.text': 'Only the consulate decides on a visa, and no one can guarantee approval. We assess the risks realistically and help you submit a complete, accurate set of documents.',
@@ -124,15 +120,13 @@ window.SIRIUS_EN = {
   'home.faq.q1': 'Do you guarantee that I will get the visa?',
   'home.faq.a1': 'No, and an honest consultant can’t promise that: only the consulate makes the decision. We help you prepare a complete and accurate application to reduce the risk of a refusal caused by mistakes and omissions.',
   'home.faq.q2': 'How much do your services cost?',
-  'home.faq.a2': 'The price is negotiable: it depends on the country, the purpose of the trip and the scope of work. We confirm it once we’ve discussed your trip; you can see what each package includes on the <a href="services.html#packages">Services and prices</a> page. The visa fee and the visa centre service fee are paid separately: the visa fee is set by EU rules, the service fee by the visa centre.',
+  'home.faq.a2': 'The price is negotiable: it depends on the country, the purpose of the trip and the scope of work. You can see what each package includes on the <a href="services.html#packages">Services and prices</a> page. The visa fee and the visa centre service fee are paid separately: the visa fee is set by EU rules, the service fee by the visa centre.',
   'home.faq.q3': 'Which countries do you work with?',
-  'home.faq.a3': 'Only Schengen visas — for any of the 29 Schengen countries. We don’t handle visas for other countries, such as the UK, the US or Canada.',
+  'home.faq.a3': 'We provide visa support for trips to any of the 29 Schengen countries.',
   'home.faq.q4': 'How long does it take?',
   'home.faq.a4': 'Under EU rules a decision is usually made within 15 calendar days of the date you apply, and in individual cases within up to 45 days. Waiting for an appointment is not included. You can apply no earlier than 6 months and, as a rule, no later than 15 calendar days before your trip, so it’s best to start early.',
   'home.faq.q5': 'Do I need to come in person?',
   'home.faq.a5': 'You usually need to hand in your documents and give your fingerprints in person at the visa centre or consulate. The consultation and document preparation are done remotely, by phone or on Telegram — you don’t need to visit us.',
-  'home.faq.q6': 'I’ve been refused before. Can you help?',
-  'home.faq.a6': 'Yes. We’ll go through the refusal letter and the reasons given, tell you what can be fixed and help you prepare a new application.',
   'home.faq.q7': 'What documents do I need for a Schengen visa?',
   'home.faq.a7': 'Usually a passport, a photo, the application form, medical insurance, and documents on the purpose of the trip, accommodation, itinerary, finances and employment or studies. Your passport must have been issued within the last 10 years, be valid for at least 3 months after the trip and have 2 blank pages. You’ll find the general list on the <a href="services.html#docs">Services and prices</a> page; we’ll give you the exact list for your trip after the consultation.',
 
@@ -146,14 +140,14 @@ window.SIRIUS_EN = {
   /* --- Страница услуг --- */
   'sv.hero.eyebrow': 'Schengen visas · services and prices',
   'sv.hero.title': 'Visa help: options and <em>prices</em>',
-  'sv.hero.lead': 'A one-off consultation, full-service preparation or help after a refusal. We confirm the exact price once we’ve discussed your trip.',
+  'sv.hero.lead': 'A consultation or preparation from scratch: compare the options and choose the one that suits you.',
   'sv.chips.packages': 'Packages',
   'sv.chips.compare': 'Comparison',
   'sv.chips.list': 'All services',
   'sv.chips.docs': 'Documents',
 
   'sv.packages.eyebrow': 'Packages',
-  'sv.packages.title': 'Three ways to work with us',
+  'sv.packages.title': 'Two ways to work with us',
   'sv.packages.lead': 'The price depends on the country, the purpose of the trip and the complexity of the case. The visa fee and the visa centre service fee are paid separately.',
 
   'sv.p1.name': 'Consultation',
@@ -167,7 +161,7 @@ window.SIRIUS_EN = {
   'sv.p1.sr': ' — ‘Consultation’ package',
 
   'sv.p2.badge': 'Recommended',
-  'sv.p2.name': 'Full service',
+  'sv.p2.name': 'From scratch',
   'sv.p2.desc': 'We get your documents ready for submission: from the consultation to booking your appointment.',
   'sv.p2.price': 'Negotiable',
   'sv.p2.i1': 'Visa consultation',
@@ -176,26 +170,16 @@ window.SIRIUS_EN = {
   'sv.p2.i4': 'Help booking your appointment',
   'sv.p2.i5': 'Preparing for your appointment and interview',
   'sv.p2.i6': 'Bookings and travel medical insurance',
-  'sv.p2.sr': ' — ‘Full service’ package',
+  'sv.p2.sr': ' — ‘From scratch’ package',
 
-  'sv.p3.name': 'After a refusal',
-  'sv.p3.desc': 'If you’ve been refused and want to reapply — without repeating the same mistakes.',
-  'sv.p3.price': 'Negotiable',
-  'sv.p3.i1': 'Reviewing the refusal letter and the reasons given',
-  'sv.p3.i2': 'Working out what can be fixed',
-  'sv.p3.i3': 'A new set of documents and application form',
-  'sv.p3.i4': 'Help booking a new appointment',
-  'sv.p3.i5': 'Bookings and travel medical insurance',
-  'sv.p3.sr': ' — ‘After a refusal’ package',
 
   'sv.compare.eyebrow': 'Comparison',
   'sv.compare.title': 'How the packages differ',
-  'sv.compare.caption': 'Comparison of the ‘Consultation’, ‘Full service’ and ‘After a refusal’ packages',
+  'sv.compare.caption': 'Comparison of the ‘Consultation’ and ‘From scratch’ packages',
   'sv.compare.corner': 'What’s included',
   'sv.compare.r1': 'Format',
   'sv.compare.r1c1': 'Meeting or call',
   'sv.compare.r1c2': 'Getting your application ready',
-  'sv.compare.r1c3': 'Refusal review and reapplication',
   'sv.compare.r2': 'Country to apply to and visa type',
   'sv.compare.r3': 'Document list',
   'sv.compare.r4': 'Document check',
@@ -203,11 +187,9 @@ window.SIRIUS_EN = {
   'sv.compare.r6': 'Help with booking',
   'sv.compare.r10': 'Preparing for the appointment and interview',
   'sv.compare.r7': 'Bookings and insurance',
-  'sv.compare.r8': 'Refusal review',
   'sv.compare.r9': 'Price',
   'sv.compare.r9c1': 'Negotiable',
   'sv.compare.r9c2': 'Negotiable',
-  'sv.compare.r9c3': 'Negotiable',
 
   'sv.list.eyebrow': 'All services',
   'sv.list.title': 'What each service includes',
@@ -247,11 +229,6 @@ window.SIRIUS_EN = {
   'sv.interview.i4': 'What to do if additional documents are requested',
   'sv.interview.result': 'You know what to expect and go to your appointment feeling calm.',
 
-  'sv.refusal.for': 'If you’ve been refused and want to know what to do next.',
-  'sv.refusal.i1': 'Reviewing the refusal letter and the reasons given',
-  'sv.refusal.i2': 'Working out what can be fixed',
-  'sv.refusal.i3': 'Preparation of a new application',
-  'sv.refusal.result': 'An understanding of the reasons for the refusal and a plan for reapplying.',
   'sv.docs.eyebrow': 'Documents',
   'sv.docs.title': 'Documents for a Schengen visa',
   'sv.docs.lead': 'A general list for applicants from Uzbekistan, based on the EU Visa Code and the common list of supporting documents used by Schengen consulates in Uzbekistan. The exact set depends on the country and your situation — we’ll put it together at the consultation.',
@@ -260,7 +237,7 @@ window.SIRIUS_EN = {
   'sv.docs.purpose.title': 'Also needed — depending on the purpose of the trip',
   'sv.docs.note': 'The consulate may ask for other documents too. Which documents must be originals and which can be copies, and how much money you need in your account depend on the country. We’ll explain all this at the consultation and check your documents before you apply.',
   'sv.docs.base.i1': 'Visa application form, filled in and signed',
-  'sv.docs.base.i2': 'Passport issued within the last 10 years, valid for at least 3 months after the trip, with 2 blank pages',
+  'sv.docs.base.i2': 'Passport',
   'sv.docs.base.i3': 'Copies of the used pages of your passport',
   'sv.docs.base.i4': 'A recent 3.5 × 4.5 cm photo on a light background',
   'sv.docs.base.i5': 'Travel medical insurance for the whole trip, valid in all Schengen countries, with cover of at least €30,000',

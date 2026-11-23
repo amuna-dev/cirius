@@ -1,0 +1,14 @@
+# Настройки Cloudflare Pages (берутся отсюда автоматически).
+#
+# Сборки как таковой нет: команда сборки (npm run build, см. package.json) только
+# копирует файлы сайта в папку dist — так на сайт не попадают служебные файлы.
+# Функция счётчика просмотров — functions/api/views.js, адрес /api/views.
+name = "cirius"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-11-01"
+
+# База Cloudflare D1 для счётчика просмотров: в коде функции она называется DB
+[[d1_databases]]
+binding = "DB"
+database_name = "cirius-views"
+database_id = "b6f9f78d-c557-44ee-a5c0-e2a5dec9fe41"
